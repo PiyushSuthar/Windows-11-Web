@@ -29,33 +29,31 @@ export const ContextMenu = ({ containerRef }: Props) => {
 
   const ContextDivider = () => <div class={styles.context_divider}></div>;
 
-  return (
-    isMenuVisible && (
-      <div
-        ref={contextmenuRef}
-        style={{ top: yPos, left: xPos }}
-        class={styles.context_menu}
-      >
-        <div class={styles.inner_container}>
-          <Contextitem>View</Contextitem>
-          <Contextitem>Sort by</Contextitem>
-          <Contextitem>Refresh</Contextitem>
-        </div>
-        <ContextDivider />
-        <div class={styles.inner_container}>
-          <Contextitem>Paste</Contextitem>
-          <Contextitem>Paste Shortcut</Contextitem>
-        </div>
-        <ContextDivider />
-        <div class={styles.inner_container}>
-          <Contextitem>New</Contextitem>
-        </div>
-        <ContextDivider />
-        <div class={styles.inner_container}>
-          <Contextitem>Display Settings</Contextitem>
-          <Contextitem>Personalize</Contextitem>
-        </div>
+  return isMenuVisible ? (
+    <div
+      ref={contextmenuRef}
+      style={{ top: yPos, left: xPos }}
+      class={styles.context_menu}
+    >
+      <div class={styles.inner_container}>
+        <Contextitem>View</Contextitem>
+        <Contextitem>Sort by</Contextitem>
+        <Contextitem>Refresh</Contextitem>
       </div>
-    )
-  );
+      <ContextDivider />
+      <div class={styles.inner_container}>
+        <Contextitem>Paste</Contextitem>
+        <Contextitem>Paste Shortcut</Contextitem>
+      </div>
+      <ContextDivider />
+      <div class={styles.inner_container}>
+        <Contextitem>New</Contextitem>
+      </div>
+      <ContextDivider />
+      <div class={styles.inner_container}>
+        <Contextitem>Display Settings</Contextitem>
+        <Contextitem>Personalize</Contextitem>
+      </div>
+    </div>
+  ) : null;
 };
