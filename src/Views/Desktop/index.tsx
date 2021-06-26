@@ -7,6 +7,7 @@ import { useRef } from "preact/hooks";
 import { Startmenu } from "../../Components/StartMenu";
 import { useStore } from "nanostores/preact";
 import { darkMode } from "../../store/darkMode";
+import StartUpSound from "../../assets/startup.mp3";
 
 interface Props {}
 
@@ -26,6 +27,7 @@ export const Desktop = (props: Props) => {
       <ContextMenu containerRef={ContainerRef} />
       <Startmenu />
       <TaskBar />
+      <audio hidden autoPlay={import.meta.env.PROD} src={StartUpSound}></audio>
     </div>
   );
 };
