@@ -16,6 +16,7 @@
   padding-top: 5px;
   padding-bottom: 5px;
   min-width: 200px;
+
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.031),
     0 6.7px 5.3px rgba(0, 0, 0, 0.044), 0 12.5px 10px rgba(0, 0, 0, 0.055),
     0 22.3px 17.9px rgba(0, 0, 0, 0.066), 0 41.8px 33.4px rgba(0, 0, 0, 0.079),
@@ -48,6 +49,10 @@
 .context_item:hover {
   background-color: rgb(233, 233, 233);
 }
+[data-theme="dark"] .context_item:hover {
+  background-color: rgba(3, 21, 41, 0.603);
+}
+
 .context_item:active {
   transform: scale(0.95);
 }
