@@ -27,5 +27,4 @@ export const ICONS: icon[] = [{
 }, {
   name: "Ms store",
   url: ms_store,
-  action: toggleTheme
 }]
