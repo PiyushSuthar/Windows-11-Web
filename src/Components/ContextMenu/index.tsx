@@ -1,7 +1,9 @@
+import { useStore } from "nanostores/preact";
 import { RefObject } from "preact";
 import { useEffect, useRef } from "preact/hooks";
 import { useContextMenu } from "../../hooks/useContextMenu";
 import { useFocusOutside } from "../../hooks/useFocusOutside";
+import { darkMode } from "../../store/darkMode";
 import styles from "./Contextmenu.module.css";
 
 interface Props {
@@ -12,6 +14,7 @@ export const ContextMenu = ({ containerRef }: Props) => {
   const { isMenuVisible, setIsMenuVisible, xPos, yPos } =
     useContextMenu(containerRef);
 
+  const isDarkMode = useStore(darkMode);
   const contextmenuRef = useRef<HTMLDivElement>();
 
   useEffect(() => {
@@ -32,7 +35,14 @@ export const ContextMenu = ({ containerRef }: Props) => {
   return isMenuVisible ? (
     <div
       ref={contextmenuRef}
-      style={{ top: yPos, left: xPos }}
+      style={{
+        top: yPos,
+        left: xPos,
+        "--bg-color": `var(${
+          isDarkMode ? "--background_dark" : "--background_light"
+        })`,
+        "--text-color": `var(${isDarkMode ? "--text-dark" : "--text-light"})`,
+      }}
       class={styles.context_menu}
     >
       <div class={styles.inner_container}>

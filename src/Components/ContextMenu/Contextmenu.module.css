@@ -1,12 +1,14 @@
 .context_menu {
+  --background_light: rgb(255, 255, 255);
+  --background_dark: rgba(3, 21, 41, 0.493);
+  --text-light: #000;
+  --text-dark: #fff;
   display: flex;
   flex-direction: column;
-  --background_light: rgb(255, 255, 255);
-  --background_dark: rgba(3, 21, 41, 0.35);
-  background: var(--background_light);
+  background: var(--bg-color);
   backdrop-filter: blur(20.5px);
   -webkit-backdrop-filter: blur(20.5px);
-  color: #000;
+  color: var(--text-color);
   position: absolute;
   top: 30%;
   left: 50%;

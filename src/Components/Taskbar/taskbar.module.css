@@ -1,7 +1,7 @@
 .container {
   --background_light: rgba(255, 255, 255, 0.658);
   --background_dark: rgba(3, 21, 41, 0.35);
-  background: var(--background_light);
+  background: var(--task-bg);
   backdrop-filter: blur(20.5px);
   -webkit-backdrop-filter: blur(20.5px);
   width: 100%;
@@ -14,4 +14,5 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  transition: 0.2s all ease;
 }
