@@ -1,7 +1,8 @@
 .container {
   position: absolute;
   height: 500px;
-  width: 600px;
+  width: 80%;
+  max-width: 600px;
   background-color: #fff;
   bottom: 10%;
   left: 50%;
