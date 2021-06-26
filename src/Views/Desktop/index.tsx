@@ -8,6 +8,7 @@ import { Startmenu } from "../../Components/StartMenu";
 import { useStore } from "nanostores/preact";
 import { ThemeStore } from "../../store/darkMode";
 import StartUpSound from "../../assets/startup.mp3";
+// import { WindowHolder } from "../../Components/Window";
 
 interface Props {}
 
@@ -26,6 +27,7 @@ export const Desktop = (props: Props) => {
         })`,
       }}
     >
+      {/* <WindowHolder /> */}
       <ContextMenu containerRef={ContainerRef} />
       <Startmenu />
       <TaskBar />
