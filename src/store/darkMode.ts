@@ -1,20 +1,28 @@
 import { createStore, getValue } from 'nanostores'
 
-export const darkMode = createStore<Boolean>(() => {
-  if (typeof window !== "undefined") {
-    if (localStorage.getItem("dark_mode")) {
-      darkMode.set(!!localStorage.getItem("dark_mode")!)
+type themeType = "light" | "dark"
 
+let LOCAL_KEY = "theme"
+
+export const ThemeStore = createStore<themeType>(() => {
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem(LOCAL_KEY)) {
+      let localTheme = localStorage.getItem(LOCAL_KEY)! as themeType
+      ThemeStore.set(localTheme)
+      document.documentElement.setAttribute("data-theme", localTheme)
     } else {
-      localStorage.setItem("dark_mode", false as any)
-      darkMode.set(false)
+      localStorage.setItem(LOCAL_KEY, "light")
+      document.documentElement.setAttribute("data-theme", "light")
+      ThemeStore.set("light")
     }
   }
 })
 
-export const toggleDarkMode = () => {
+export const toggleTheme = () => {
   if (typeof window !== "undefined") {
-    darkMode.set(!getValue(darkMode))
-    localStorage.setItem("dark_mode", !getValue(darkMode) as any)
+    let newTheme: themeType = getValue(ThemeStore) === "light" ? "dark" : "light"
+    ThemeStore.set(newTheme)
+    localStorage.setItem(LOCAL_KEY, newTheme)
+    document.documentElement.setAttribute("data-theme", newTheme)
   }
 }

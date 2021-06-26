@@ -1,14 +1,14 @@
 import { useStore } from "nanostores/preact";
 import { useEffect, useRef } from "preact/hooks";
 import { useFocusOutside } from "../../hooks/useFocusOutside";
-import { darkMode } from "../../store/darkMode";
+import { ThemeStore } from "../../store/darkMode";
 import { showStartMenu as isStartMenuVisible } from "../../store/startMenu";
 import { SearchBar } from "./SearchBar";
 import styles from "./StartMenu.module.css";
 
 export const Startmenu = () => {
   const showStartMenu = useStore(isStartMenuVisible);
-  const isDarkMode = useStore(darkMode);
+  const theme = useStore(ThemeStore);
 
   const StartMenuRef = useRef<HTMLDivElement>();
 
@@ -26,7 +26,7 @@ export const Startmenu = () => {
       ref={StartMenuRef}
       style={{
         "--start-bg": `var(${
-          isDarkMode ? "--background_dark" : "--background_light"
+          theme === "dark" ? "--background_dark" : "--background_light"
         })`,
       }}
       class={styles.container}

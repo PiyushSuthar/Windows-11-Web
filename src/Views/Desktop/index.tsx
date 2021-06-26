@@ -6,7 +6,7 @@ import { ContextMenu } from "../../Components/ContextMenu";
 import { useRef } from "preact/hooks";
 import { Startmenu } from "../../Components/StartMenu";
 import { useStore } from "nanostores/preact";
-import { darkMode } from "../../store/darkMode";
+import { ThemeStore } from "../../store/darkMode";
 import StartUpSound from "../../assets/startup.mp3";
 
 interface Props {}
@@ -14,14 +14,16 @@ interface Props {}
 export const Desktop = (props: Props) => {
   const ContainerRef = useRef<HTMLDivElement>();
 
-  const isDarkMode = useStore(darkMode);
+  const theme = useStore(ThemeStore);
 
   return (
     <div
       class={styles.container}
       ref={ContainerRef}
       style={{
-        "--bg-image": `url(${isDarkMode ? default_dark_bg : default_light_bg})`,
+        "--bg-image": `url(${
+          theme === "dark" ? default_dark_bg : default_light_bg
+        })`,
       }}
     >
       <ContextMenu containerRef={ContainerRef} />

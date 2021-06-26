@@ -4,7 +4,7 @@ import search from '../assets/icons/taskbar/search.ico'
 import ms_store from '../assets/icons/taskbar/ms_store.png'
 import file_explorer from '../assets/icons/taskbar/file_explorer.ico'
 import { toggleStartMenu } from '../store/startMenu'
-import { toggleDarkMode } from '../store/darkMode'
+import { toggleTheme } from '../store/darkMode'
 
 export interface icon {
   name: string
@@ -27,5 +27,5 @@ export const ICONS: icon[] = [{
 }, {
   name: "Ms store",
   url: ms_store,
-  action: toggleDarkMode
+  action: toggleTheme
 }]
