@@ -3,14 +3,18 @@ import edge from '../assets/icons/taskbar/edge.ico'
 import search from '../assets/icons/taskbar/search.ico'
 import ms_store from '../assets/icons/taskbar/ms_store.png'
 import file_explorer from '../assets/icons/taskbar/file_explorer.ico'
+import { toggleStartMenu } from '../store/startMenu'
+import { toggleDarkMode } from '../store/darkMode'
 
 export interface icon {
   name: string
   url: string
+  action?: () => any
 }
 export const ICONS: icon[] = [{
   name: "Start menu",
-  url: startMenu
+  url: startMenu,
+  action: toggleStartMenu
 }, {
   name: "Search",
   url: search
@@ -22,5 +26,6 @@ export const ICONS: icon[] = [{
   url: file_explorer
 }, {
   name: "Ms store",
-  url: ms_store
+  url: ms_store,
+  action: toggleDarkMode
 }]
