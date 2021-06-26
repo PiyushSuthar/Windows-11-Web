@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import prefresh from '@prefresh/vite'
+import preact from '@preact/preset-vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,5 +8,8 @@ export default defineConfig({
     jsxFragment: "Fragment",
     jsxInject: 'import {h, Fragment } from "preact"'
   },
-  plugins: [prefresh()],
+  plugins: [preact()],
+  alias: {
+    react: 'preact/compat',
+  },
 })

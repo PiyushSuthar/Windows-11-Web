@@ -8,10 +8,11 @@
   },
   "dependencies": {
     "nanostores": "^0.3.3",
-    "preact": "^10.5.13"
+    "preact": "^10.5.13",
+    "react-rnd": "^10.3.3"
   },
   "devDependencies": {
-    "@prefresh/vite": "^2.2.2",
+    "@preact/preset-vite": "^2.1.0",
     "typescript": "^4.1.2",
     "vite": "^2.2.3"
   }
