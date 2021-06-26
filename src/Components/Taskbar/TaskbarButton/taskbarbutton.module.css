@@ -12,7 +12,11 @@
 .button:hover {
   --bg-dark: rgba(3, 21, 41, 0.562);
   --bg-light: rgba(243, 243, 243, 0.562);
-  background-color: var(--bg-light);
+  --bg-task-color: var(--bg-light);
+  background-color: var(--bg-task-color);
+}
+[data-theme="dark"] .button {
+  --bg-task-color: var(--bg-dark);
 }
 .button img:active {
   transform: scale(0.8);

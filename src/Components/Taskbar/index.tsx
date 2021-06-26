@@ -1,8 +1,10 @@
 import { useStore } from "nanostores/preact";
 import { ICONS } from "../../Configs/Taskbar.config";
-import { ThemeStore } from "../../store/darkMode";
+import { ThemeStore, toggleTheme } from "../../store/darkMode";
 import styles from "./taskbar.module.css";
 import { TaskBarButton } from "./TaskbarButton";
+import dark_mode_icon from "../../assets/icons/taskbar/dark_mode.png";
+import light_mode_icon from "../../assets/icons/taskbar/light_mode.png";
 interface Props {}
 
 export const TaskBar = (props: Props) => {
@@ -20,6 +22,11 @@ export const TaskBar = (props: Props) => {
       {ICONS.map((icon, index) => (
         <TaskBarButton {...icon} key={index} />
       ))}
+      <TaskBarButton
+        url={theme === "dark" ? light_mode_icon : dark_mode_icon}
+        name="Dark mode Toggle"
+        action={toggleTheme}
+      />
     </div>
   );
 };
