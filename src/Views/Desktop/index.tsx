@@ -1,9 +1,9 @@
 import styles from "./Desktop.module.css";
-import default_dark_bg from "../../assets/Wallpapers/default_dark.jpg";
-import default_light_bg from "../../assets/Wallpapers/default_light.jpg";
+import DarkBackground from "../../assets/Wallpapers/default_dark.jpg";
+import LightBackground from "../../assets/Wallpapers/default_light.jpg";
 import { TaskBar } from "../../Components/Taskbar/";
 import { ContextMenu } from "../../Components/ContextMenu";
-import { useRef } from "preact/hooks";
+import { useEffect, useRef } from "preact/hooks";
 import { Startmenu } from "../../Components/StartMenu";
 import StartUpSound from "../../assets/startup.mp3";
 // import { WindowHolder } from "../../Components/Window";
@@ -12,11 +12,14 @@ interface Props {}
 
 export const Desktop = (props: Props) => {
   const ContainerRef = useRef<HTMLDivElement>();
+
+  useEffect(() => {
+    preloadImage(DarkBackground);
+    preloadImage(LightBackground);
+  }, []);
+
   return (
-    <div
-      class={styles.container}
-      ref={ContainerRef}
-    >
+    <div class={styles.container} ref={ContainerRef}>
       {/* <WindowHolder /> */}
       <ContextMenu containerRef={ContainerRef} />
       <Startmenu />
@@ -25,3 +28,8 @@ export const Desktop = (props: Props) => {
     </div>
   );
 };
+
+function preloadImage(path: string) {
+  const img = new Image();
+  img.src = path;
+}
