@@ -11,6 +11,7 @@ export const SearchBar = () => {
         class={styles.search_input}
         type="text"
         placeholder="Type here to search"
+        autofocus
       />
     </div>
   );
