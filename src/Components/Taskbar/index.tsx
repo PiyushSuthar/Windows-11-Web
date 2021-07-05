@@ -5,6 +5,7 @@ import styles from "./taskbar.module.css";
 import { TaskBarButton } from "./TaskbarButton";
 import dark_mode_icon from "../../assets/icons/taskbar/dark_mode.png";
 import light_mode_icon from "../../assets/icons/taskbar/light_mode.png";
+import { AppsConfig } from "../../Configs/apps.config";
 interface Props {}
 
 export const TaskBar = (props: Props) => {
@@ -22,6 +23,16 @@ export const TaskBar = (props: Props) => {
       {ICONS.map((icon, index) => (
         <TaskBarButton {...icon} key={index} />
       ))}
+      {Object.keys(AppsConfig).map(
+        (appid) =>
+          AppsConfig[appid] && (
+            <TaskBarButton
+              name={AppsConfig[appid].title}
+              url={AppsConfig[appid].icon}
+              appId={appid}
+            />
+          )
+      )}
       <TaskBarButton
         url={theme === "dark" ? light_mode_icon : dark_mode_icon}
         name="Dark mode Toggle"
