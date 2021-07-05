@@ -6,7 +6,7 @@ import { ContextMenu } from "../../Components/ContextMenu";
 import { useEffect, useRef } from "preact/hooks";
 import { Startmenu } from "../../Components/StartMenu";
 import StartUpSound from "../../assets/startup.mp3";
-// import { WindowHolder } from "../../Components/Window";
+import { WindowArea } from "../../Components/WindowArea";
 
 interface Props {}
 
@@ -20,7 +20,7 @@ export const Desktop = (props: Props) => {
 
   return (
     <div class={styles.container} ref={ContainerRef}>
-      {/* <WindowHolder /> */}
+      <WindowArea />
       <ContextMenu containerRef={ContainerRef} />
       <Startmenu />
       <TaskBar />
