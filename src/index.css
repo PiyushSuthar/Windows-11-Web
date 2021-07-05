@@ -1,8 +1,17 @@
+@font-face {
+  font-family: "Segoe UI Variable";
+  src: url("./assets/fonts/SegoeUIVariable.woff2") format("woff2"),
+    url("./assets/fonts/SegoeUIVariable.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI Variable";
 }
