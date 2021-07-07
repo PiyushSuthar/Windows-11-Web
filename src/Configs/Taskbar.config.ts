@@ -2,6 +2,7 @@ import startMenu from '../assets/icons/taskbar/startmenu.ico'
 import search from '../assets/icons/taskbar/search.ico'
 
 import { toggleStartMenu } from '../store/startMenu'
+import { StartMenuIcon } from '../assets/icons/startmenu'
 
 export interface icon {
   name: string
@@ -10,7 +11,7 @@ export interface icon {
 }
 export const ICONS: icon[] = [{
   name: "Start menu",
-  url: startMenu,
+  url: StartMenuIcon,
   action: toggleStartMenu
 }, {
   name: "Search",

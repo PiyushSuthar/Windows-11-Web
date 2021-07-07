@@ -1,6 +1,7 @@
 import edge from '../assets/icons/taskbar/edge.ico'
 import ms_store from '../assets/icons/taskbar/ms_store.png'
 import file_explorer from '../assets/icons/taskbar/file_explorer.ico'
+import { MSEdgeIcon, MSStoreIcon } from '../assets/icons/startmenu'
 
 export type App = {
     [key: string]: {
@@ -14,7 +15,7 @@ export const AppsConfig: App = {
     edge: {
         title: "Edge",
         isActive: false,
-        icon: edge
+        icon: MSEdgeIcon
     },
     "file-explorer": {
         title: "File Explorer",
@@ -24,6 +25,6 @@ export const AppsConfig: App = {
     "ms-store": {
         title: "Micorsoft Store",
         isActive: false,
-        icon: ms_store
+        icon: MSStoreIcon
     }
 }
