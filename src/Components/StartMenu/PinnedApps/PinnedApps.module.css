@@ -12,7 +12,8 @@
   align-items: center;
 }
 .title_area p {
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 500;
 }
 .button {
   outline: none;
@@ -21,8 +22,8 @@
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.815);
   cursor: pointer;
-  font-size: 12px;
-  letter-spacing: 0.6px;
+  font-size: 11px;
+  letter-spacing: 0.2px;
   transition: 0.3s transform ease, 0.2s background-color ease, 0.2s color;
   display: flex;
   align-items: center;
@@ -32,6 +33,57 @@
   transform: scale(0.9);
 }
 [data-theme="dark"] .button {
-  background-color: rgba(24, 35, 53, 0.692);
+  background-color: rgba(46, 61, 83, 0.692);
   color: rgba(255, 255, 255, 0.836);
+}
+
+.apps {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  margin-top: 10px;
+}
+
+.app {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s transform, 0.2s background-color;
+  border-radius: 4px;
+}
+.app p,
+.app img {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+.app:hover {
+  background-color: rgba(255, 255, 255, 0.596);
+}
+[data-theme="dark"] .app:hover {
+  background-color: rgba(3, 21, 41, 0.425);
+}
+.app:active {
+  transform: scale(0.9);
+}
+.app img {
+  height: 60%;
+}
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  width: 100%;
+}
+.link .app {
+  width: 100%;
 }
