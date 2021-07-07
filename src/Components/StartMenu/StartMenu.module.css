@@ -1,32 +1,47 @@
 .container {
   position: absolute;
-  height: 500px;
+  min-height: 80%;
+  max-height: 850px;
   width: 80%;
   max-width: 600px;
   background-color: #fff;
-  bottom: 10%;
+  bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
-  --background_light: rgba(255, 255, 255, 0.596);
-  --background_dark: rgba(3, 21, 41, 0.35);
-  background: var(--start-bg);
   backdrop-filter: blur(20.5px);
   -webkit-backdrop-filter: blur(20.5px);
   border-radius: 8px;
   transition: 0.2s all ease;
   animation: slideUp 0.3s ease-in;
-
+  background: transparent;
   display: flex;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
     0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
     0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
     0 100px 80px rgba(0, 0, 0, 0.07);
   flex-direction: column;
+  overflow: hidden;
 }
-.inner_container {
+
+[data-theme="dark"] .inner_container {
+  background: rgba(28, 33, 39, 0.63);
+}
+[data-theme="dark"] .user_container {
+  background: rgba(3, 21, 41, 0.562);
+}
+.inner_container,
+.user_container {
   padding: 20px;
   padding-bottom: 5px;
   width: 100%;
+  transition: 0.2s background ease;
+}
+.user_container {
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.527);
+}
+.inner_container {
+  background: rgba(255, 255, 255, 0.596);
 }
 @keyframes slideUp {
   from {
