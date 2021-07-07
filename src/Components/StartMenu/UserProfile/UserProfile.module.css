@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+
+  /* padding-bottom: 15px; */
+  transition: 0.2s color ease;
+}
+
+[data-theme="dark"] .container {
+  color: rgba(255, 255, 255, 0.904);
+}
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.user img {
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
