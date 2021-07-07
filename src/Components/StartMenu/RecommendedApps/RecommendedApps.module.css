@@ -1,0 +1,8 @@
+.container {
+  padding: 0 30px;
+  transition: 0.2s color ease;
+  flex: 1;
+}
+[data-theme="dark"] .container {
+  color: rgba(255, 255, 255, 0.836);
+}
