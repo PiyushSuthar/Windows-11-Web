@@ -2,11 +2,24 @@ import styles from "./Desktop.module.css";
 // import DarkBackground from "../../assets/Wallpapers/default_dark.jpg";
 // import LightBackground from "../../assets/Wallpapers/default_light.jpg";
 import { TaskBar } from "../../Components/Taskbar/";
-import { ContextMenu } from "../../Components/ContextMenu";
+// import { ContextMenu } from "../../Components/ContextMenu";
 import { useEffect, useRef } from "preact/hooks";
-import { Startmenu } from "../../Components/StartMenu";
+// import { Startmenu } from "../../Components/StartMenu";
 import StartUpSound from "../../assets/startup.mp3";
 import { WindowArea } from "../../Components/WindowArea";
+import { lazy, Suspense } from "preact/compat";
+
+const ContextMenu = lazy(() =>
+  import("../../Components/ContextMenu").then(({ ContextMenu }) => ({
+    default: ContextMenu,
+  }))
+);
+
+const Startmenu = lazy(() =>
+  import("../../Components/StartMenu").then(({ Startmenu }) => ({
+    default: Startmenu,
+  }))
+);
 
 interface Props {}
 
@@ -21,8 +34,10 @@ export const Desktop = (props: Props) => {
   return (
     <div class={styles.container} ref={ContainerRef}>
       <WindowArea />
-      <ContextMenu containerRef={ContainerRef} />
-      <Startmenu />
+      <Suspense fallback={<span></span>}>
+        <ContextMenu containerRef={ContainerRef} />
+        <Startmenu />
+      </Suspense>
       <TaskBar />
       <audio hidden autoPlay={import.meta.env.PROD} src={StartUpSound}></audio>
     </div>
