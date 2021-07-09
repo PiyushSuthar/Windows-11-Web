@@ -1,12 +1,12 @@
 .container {
   height: 100vh;
   width: 100vw;
-  background-image: url(../../assets/Wallpapers/default_light.jpg);
+  background-image: url(../../assets/Wallpapers/default_light_compressed.jpg);
   background-size: cover;
   transition: 0.2s background-image ease;
   position: relative;
   overflow: hidden;
 }
 [data-theme="dark"] .container {
-  background-image: url(../../assets/Wallpapers/default_dark.jpg);
+  background-image: url(../../assets/Wallpapers/default_dark_compressed.jpg);
 }
