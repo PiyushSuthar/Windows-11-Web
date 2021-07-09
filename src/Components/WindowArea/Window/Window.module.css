@@ -13,7 +13,7 @@
     0 100px 80px rgba(0, 0, 0, 0.07);
   transition: 0.2s background, 0.2s color;
   color: black;
-  animation: pop 0.3s ease;
+  animation: 0.3s Pop ease;
 }
 
 @keyframes Pop {
@@ -38,7 +38,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 0 0 10px;
+  padding: 0px 0 0 8px;
 }
 .title_icon {
   height: 18px;
