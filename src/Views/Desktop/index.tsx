@@ -1,6 +1,6 @@
 import styles from "./Desktop.module.css";
-import DarkBackground from "../../assets/Wallpapers/default_dark.jpg";
-import LightBackground from "../../assets/Wallpapers/default_light.jpg";
+// import DarkBackground from "../../assets/Wallpapers/default_dark.jpg";
+// import LightBackground from "../../assets/Wallpapers/default_light.jpg";
 import { TaskBar } from "../../Components/Taskbar/";
 import { ContextMenu } from "../../Components/ContextMenu";
 import { useEffect, useRef } from "preact/hooks";
@@ -13,10 +13,10 @@ interface Props {}
 export const Desktop = (props: Props) => {
   const ContainerRef = useRef<HTMLDivElement>();
 
-  useEffect(() => {
-    preloadImage(DarkBackground);
-    preloadImage(LightBackground);
-  }, []);
+  // useEffect(() => {
+  //   preloadImage(DarkBackground);
+  //   preloadImage(LightBackground);
+  // }, []);
 
   return (
     <div class={styles.container} ref={ContainerRef}>
@@ -29,7 +29,7 @@ export const Desktop = (props: Props) => {
   );
 };
 
-function preloadImage(path: string) {
-  const img = new Image();
-  img.src = path;
-}
+// function preloadImage(path: string) {
+//   const img = new Image();
+//   img.src = path;
+// }
