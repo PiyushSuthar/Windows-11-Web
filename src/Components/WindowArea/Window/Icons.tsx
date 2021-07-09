@@ -17,13 +17,13 @@ export const CloseIcon = ({
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      stroke-width="2"
+      stroke-width="1.25"
       stroke-linecap="round"
       stroke-linejoin="round"
       class="feather feather-x"
     >
-      <line x1="18" y1="6" x2="6" y2="18"></line>
-      <line x1="6" y1="6" x2="18" y2="18"></line>
+      <line x1="21" y1="3" x2="3" y2="21"></line>
+      <line x1="3" y1="3" x2="21" y2="21"></line>
     </svg>
   );
 };
@@ -68,53 +68,28 @@ export const RestoreIcon = (props: IconProps) => {
     </svg>
   );
 };
-
 export const MinimizeIcon = ({
-  color = "#ffffff",
   width = "24",
   height = "24",
+  color = "#fff",
 }: IconProps) => {
   return (
     <svg
-      version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      preserveAspectRatio="xMidYMid meet"
-      viewBox="0 0 640 450"
-      {...{ width, height }}
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      stroke-width="1.25"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-x"
     >
-      <defs>
-        <path
-          d="M598.24 269.13C606.62 269.13 613.42 275.93 613.42 284.31C613.42 288.56 613.42 286.12 613.42 290.37C613.42 298.75 606.62 305.54 598.24 305.54C486.05 305.54 164.66 305.54 52.47 305.54C44.09 305.54 37.29 298.75 37.29 290.37C37.29 286.12 37.29 288.56 37.29 284.31C37.29 275.93 44.09 269.13 52.47 269.13C164.66 269.13 486.05 269.13 598.24 269.13Z"
-          id="c9ABkuGXV0"
-        ></path>
-      </defs>
-      <g>
-        <g>
-          <g>
-            <use
-              xlinkHref="#c9ABkuGXV0"
-              opacity="1"
-              fill={color}
-              fill-opacity="1"
-            ></use>
-            <g>
-              <use
-                xlinkHref="#c9ABkuGXV0"
-                opacity="1"
-                fill-opacity="0"
-                stroke="#4fad6d"
-                stroke-width="0"
-                stroke-opacity="1"
-              ></use>
-            </g>
-          </g>
-        </g>
-      </g>
+      <line x1="3" y1="12.5" x2="21" y2="12.5"></line>
     </svg>
   );
 };
-
 export const BackIcon = ({ width = "16", height = "16" }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

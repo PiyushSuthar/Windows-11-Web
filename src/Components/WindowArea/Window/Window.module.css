@@ -13,7 +13,7 @@
     0 100px 80px rgba(0, 0, 0, 0.07);
   transition: 0.2s background, 0.2s color;
   color: black;
-  animation: 0.3s Pop ease;
+  animation: pop 0.3s ease;
 }
 
 @keyframes Pop {
@@ -32,18 +32,18 @@
   background: rgba(3, 21, 41, 0.774);
   color: #fff;
 }
-
 .titlebar {
+  height: 32px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0px 0 0 10px;
 }
 .title_icon {
   height: 18px;
   width: 18px;
 }
-
 .window_actions {
   display: flex;
   flex-direction: row;
@@ -51,27 +51,24 @@
   justify-content: flex-start;
 }
 .icon {
-  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 2px;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 16px;
+  margin-right: 16px;
   transition: 0.2s color ease;
   cursor: pointer;
 }
-
 .title_stuff {
-  padding: 5px 10px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin: 5px;
+  margin: -3px 0 0 0;
 }
 .title_stuff p {
   font-size: 13px;
   font-weight: lighter;
   letter-spacing: 0.5px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
