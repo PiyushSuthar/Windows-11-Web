@@ -38,12 +38,6 @@ export const ContextMenu = ({ containerRef }: Props) => {
       style={{
         top: yPos,
         left: xPos,
-        "--bg-color": `var(${
-          theme === "dark" ? "--background_dark" : "--background_light"
-        })`,
-        "--text-color": `var(${
-          theme === "dark" ? "--text-dark" : "--text-light"
-        })`,
       }}
       class={styles.context_menu}
     >

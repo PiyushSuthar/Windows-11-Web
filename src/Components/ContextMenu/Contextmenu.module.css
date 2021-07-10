@@ -1,14 +1,10 @@
 .context_menu {
-  --background_light: rgb(255, 255, 255);
-  --background_dark: rgba(3, 21, 41, 0.493);
-  --text-light: #000;
-  --text-dark: #fff;
   display: flex;
   flex-direction: column;
-  background: var(--bg-color);
+  background: rgb(255, 255, 255);
   backdrop-filter: blur(20.5px);
   -webkit-backdrop-filter: blur(20.5px);
-  color: var(--text-color);
+  color: #000;
   position: absolute;
   top: 30%;
   left: 50%;
@@ -25,6 +21,10 @@
   transform-origin: top left;
 }
 
+[data-theme="dark"] .context_menu {
+  background: rgba(3, 21, 41, 0.493);
+  color: #fff;
+}
 @keyframes pop {
   from {
     transform: scale(0);
