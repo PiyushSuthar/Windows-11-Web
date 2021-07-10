@@ -23,7 +23,7 @@ export const AppsConfig: App = {
         icon: file_explorer
     },
     "ms-store": {
-        title: "Micorsoft Store",
+        title: "Microsoft Store",
         isActive: false,
         icon: MSStoreIcon
     }
