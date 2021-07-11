@@ -11,8 +11,8 @@
   backdrop-filter: blur(20.5px);
   -webkit-backdrop-filter: blur(20.5px);
   border-radius: 8px;
-  transition: 0.2s all ease;
-  animation: slideUp 0.3s ease-in;
+  transition: 0.2s background ease;
+  animation: slideUp 0.3s ease;
   background: transparent;
   display: flex;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
