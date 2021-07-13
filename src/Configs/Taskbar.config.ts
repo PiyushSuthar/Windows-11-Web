@@ -1,8 +1,10 @@
-import startMenu from '../assets/icons/taskbar/startmenu.ico'
+import startMenu from '../assets/icons/taskbar/Windows.png'
 import search from '../assets/icons/taskbar/search.ico'
+import taskmanager from '../assets/icons/taskbar/taskmanager.png'
+import widget from '../assets/icons/taskbar/Widgets.png'
 
 import { toggleStartMenu } from '../store/startMenu'
-import { StartMenuIcon } from '../assets/icons/startmenu'
+// import { StartMenuIcon } from '../assets/icons/startmenu'
 
 export interface icon {
   name: string
@@ -11,9 +13,15 @@ export interface icon {
 }
 export const ICONS: icon[] = [{
   name: "Start menu",
-  url: StartMenuIcon,
+  url: startMenu,
   action: toggleStartMenu
 }, {
   name: "Search",
   url: search
+}, {
+  name: "Task Manager",
+  url: taskmanager
+}, {
+  name: "Widgets",
+  url: widget
 }]
