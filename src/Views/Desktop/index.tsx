@@ -8,6 +8,7 @@ import { useEffect, useRef } from "preact/hooks";
 import StartUpSound from "../../assets/startup.mp3";
 import { WindowArea } from "../../Components/WindowArea";
 import { lazy, Suspense } from "preact/compat";
+import { defaultContextMenuConfig } from "../../Configs/ContextMenus/default.config";
 
 const ContextMenu = lazy(() =>
   import("../../Components/ContextMenu").then(({ ContextMenu }) => ({
@@ -35,7 +36,10 @@ export const Desktop = (props: Props) => {
     <div class={styles.container} ref={ContainerRef}>
       <WindowArea />
       <Suspense fallback={<span></span>}>
-        <ContextMenu containerRef={ContainerRef} />
+        <ContextMenu
+          items={defaultContextMenuConfig}
+          containerRef={ContainerRef}
+        />
         <Startmenu />
       </Suspense>
       <TaskBar />
