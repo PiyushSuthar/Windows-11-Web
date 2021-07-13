@@ -4,6 +4,10 @@ import { useEffect, useCallback, useState } from 'preact/hooks';
 export const useContextMenu = <T extends HTMLElement>(outerRef: RefObject<T>) => {
   const [xPos, setXPos] = useState('0px');
   const [yPos, setYPos] = useState('0px');
+  const [transformOrigin, setTransformOrigin] = useState({
+    x: "top",
+    y: "left"
+  });
 
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
@@ -15,12 +19,27 @@ export const useContextMenu = <T extends HTMLElement>(outerRef: RefObject<T>) =>
     let x = event.pageX;
     let y = event.pageY;
 
+    let transformOrigin_x = "top";
+    let transformOrigin_y = "left";
+
     // Open to other side if rest of space is too small
-    if (window.innerWidth - x < 250) x -= 250;
-    if (window.innerHeight - y < 300) y -= 250;
+    if (window.innerWidth - x < 250) {
+      x -= 250
+      // For some reason, it worked ;)
+      transformOrigin_y = "right";
+    };
+    if (window.innerHeight - y < 300) {
+      y -= 250
+      // For some reason, it worked ;)
+      transformOrigin_x = "bottom";
+    };
 
     setXPos(`${x}px`);
     setYPos(`${y}px`);
+    setTransformOrigin({
+      x: transformOrigin_x,
+      y: transformOrigin_y
+    })
 
     setIsMenuVisible(true);
 
@@ -39,5 +58,5 @@ export const useContextMenu = <T extends HTMLElement>(outerRef: RefObject<T>) =>
     };
   }, []);
 
-  return { xPos, yPos, isMenuVisible, setIsMenuVisible };
+  return { xPos, yPos, isMenuVisible, setIsMenuVisible, transformOrigin };
 };
