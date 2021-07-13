@@ -6,20 +6,14 @@ import { TaskBarButton } from "./TaskbarButton";
 import dark_mode_icon from "../../assets/icons/taskbar/dark_mode.png";
 import light_mode_icon from "../../assets/icons/taskbar/light_mode.png";
 import { AppsConfig } from "../../Configs/apps.config";
+import { ActionCenter } from "./ActionCenter";
 interface Props {}
 
 export const TaskBar = (props: Props) => {
   const theme = useStore(ThemeStore);
 
   return (
-    <div
-      style={{
-        "--task-bg": `var(${
-          theme === "dark" ? "--background_dark" : "--background_light"
-        })`,
-      }}
-      class={styles.container}
-    >
+    <div class={styles.container}>
       {ICONS.map((icon, index) => (
         <TaskBarButton {...icon} key={index} />
       ))}
@@ -38,6 +32,7 @@ export const TaskBar = (props: Props) => {
         name="Dark mode Toggle"
         action={toggleTheme}
       />
+      <ActionCenter />
     </div>
   );
 };
