@@ -1,0 +1,9 @@
+.container {
+  margin-left: auto;
+  font-size: 13px;
+  padding: 5px;
+  transition: 0.2s color;
+}
+[data-theme="dark"] .container {
+  color: #fff;
+}

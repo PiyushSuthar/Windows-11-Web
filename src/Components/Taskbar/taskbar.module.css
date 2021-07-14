@@ -18,3 +18,7 @@
 [data-theme="dark"] .container {
   background: rgba(3, 21, 41, 0.35);
 }
+.icons {
+  display: flex;
+  margin-left: auto;
+}

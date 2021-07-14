@@ -14,24 +14,26 @@ export const TaskBar = (props: Props) => {
 
   return (
     <div class={styles.container}>
-      {ICONS.map((icon, index) => (
-        <TaskBarButton {...icon} key={index} />
-      ))}
-      {Object.keys(AppsConfig).map(
-        (appid) =>
-          AppsConfig[appid] && (
-            <TaskBarButton
-              name={AppsConfig[appid].title}
-              url={AppsConfig[appid].icon}
-              appId={appid}
-            />
-          )
-      )}
-      <TaskBarButton
-        url={theme === "dark" ? light_mode_icon : dark_mode_icon}
-        name="Dark mode Toggle"
-        action={toggleTheme}
-      />
+      <div className={styles.icons}>
+        {ICONS.map((icon, index) => (
+          <TaskBarButton {...icon} key={index} />
+        ))}
+        {Object.keys(AppsConfig).map(
+          (appid) =>
+            AppsConfig[appid] && (
+              <TaskBarButton
+                name={AppsConfig[appid].title}
+                url={AppsConfig[appid].icon}
+                appId={appid}
+              />
+            )
+        )}
+        <TaskBarButton
+          url={theme === "dark" ? light_mode_icon : dark_mode_icon}
+          name="Dark mode Toggle"
+          action={toggleTheme}
+        />
+      </div>
       <ActionCenter />
     </div>
   );
