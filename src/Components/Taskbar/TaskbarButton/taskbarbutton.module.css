@@ -11,7 +11,7 @@
 }
 .button:hover {
   --bg-dark: rgba(3, 21, 41, 0.562);
-  --bg-light: rgba(243, 243, 243, 0.562);
+  --bg-light: rgba(243, 243, 243, 0.747);
   --bg-task-color: var(--bg-light);
   background-color: var(--bg-task-color);
 }
