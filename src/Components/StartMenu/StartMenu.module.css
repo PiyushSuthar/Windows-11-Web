@@ -1,6 +1,6 @@
 .container {
   position: absolute;
-  min-height: 80%;
+  /* min-height: 80%; */
   max-height: 850px;
   width: 80%;
   max-width: 600px;
