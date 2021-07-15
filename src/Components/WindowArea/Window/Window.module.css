@@ -7,28 +7,24 @@
   transition: 0.2s background ease;
   transition: 0.2s border ease;
   border-radius: 6px;
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
-    0 100px 80px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   transition: 0.2s background, 0.2s color;
   color: black;
-  animation: 0.3s Pop ease;
+  animation: 0.3s Pop;
+  animation-timing-function: cubic-bezier(0, 1, 0.5, 1.08);
 }
 
 @keyframes Pop {
   from {
     transform: scale(0.9);
   }
-  80% {
-    transform: scale(1.02);
-  }
   to {
     transform: scale(1);
   }
 }
 
-[data-theme="dark"] .container {
+[data-theme='dark'] .container {
   background: rgba(3, 21, 41, 0.774);
   color: #fff;
 }
