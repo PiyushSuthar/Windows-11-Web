@@ -13,24 +13,21 @@
   padding-bottom: 5px;
   min-width: 240px;
 
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.031),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.044), 0 12.5px 10px rgba(0, 0, 0, 0.055),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.066), 0 41.8px 33.4px rgba(0, 0, 0, 0.079),
-    0 100px 80px rgba(0, 0, 0, 0.11);
-  animation: pop 0.2s ease;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.031), 0 6.7px 5.3px rgba(0, 0, 0, 0.044), 0 12.5px 10px rgba(0, 0, 0, 0.055),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.066), 0 41.8px 33.4px rgba(0, 0, 0, 0.079), 0 100px 80px rgba(0, 0, 0, 0.11);
+  animation: 0.3s Pop;
+  animation-timing-function: cubic-bezier(0, 1, 0.5, 1.08);
   transform-origin: top left;
 }
 
-[data-theme="dark"] .context_menu {
+[data-theme='dark'] .context_menu {
   background: rgb(44, 44, 44);
   color: #fff;
 }
-@keyframes pop {
+
+@keyframes Pop {
   from {
-    transform: scale(0);
-  }
-  90% {
-    transform: scale(1.02);
+    transform: scale(0.9);
   }
   to {
     transform: scale(1);
@@ -63,7 +60,7 @@
 .context_item:not(.disabled):hover {
   background-color: rgb(233, 233, 233);
 }
-[data-theme="dark"] .context_item:not(.disabled):hover {
+[data-theme='dark'] .context_item:not(.disabled):hover {
   background-color: rgb(73, 73, 73);
 }
 

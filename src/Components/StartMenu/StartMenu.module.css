@@ -7,12 +7,13 @@
   background-color: #fff;
   bottom: 60px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 0%);
   backdrop-filter: blur(20.5px);
   -webkit-backdrop-filter: blur(20.5px);
   border-radius: 8px;
   transition: 0.2s background ease;
-  animation: slideUp 0.3s ease;
+  animation: 0.4s slideUp;
+  animation-timing-function: cubic-bezier(.3,.5,0,1.00);
   background: transparent;
   display: flex;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
@@ -45,12 +46,9 @@
 }
 @keyframes slideUp {
   from {
-    bottom: -100%;
-  }
-  80% {
-    bottom: 11%;
+    transform: translate(-50%, 100%);
   }
   to {
-    bottom: 10%;
+    transform: translate(-50%, 0%);
   }
 }
