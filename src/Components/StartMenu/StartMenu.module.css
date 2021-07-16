@@ -13,7 +13,7 @@
   border-radius: 8px;
   transition: 0.2s background ease;
   animation: 0.4s slideUp;
-  animation-timing-function: cubic-bezier(.3,.5,0,1.00);
+  animation-timing-function: cubic-bezier(0.3, 0.5, 0, 1);
   background: transparent;
   display: flex;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
@@ -22,8 +22,12 @@
     0 100px 80px rgba(0, 0, 0, 0.07);
   flex-direction: column;
   overflow: hidden;
+  /* transition: 0.3s transform ease; */
 }
-
+.container.active {
+  animation: 0.2s slideDown ease;
+  /* animation-timing-function: cubic-bezier(0.3, 0.5, 0, 1); */
+}
 [data-theme="dark"] .inner_container {
   background: rgba(28, 33, 39, 0.63);
 }
@@ -50,5 +54,13 @@
   }
   to {
     transform: translate(-50%, 0%);
+  }
+}
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, 0%);
+  }
+  to {
+    transform: translate(-50%, 100%);
   }
 }

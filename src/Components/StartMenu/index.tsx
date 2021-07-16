@@ -17,7 +17,13 @@ export const Startmenu = () => {
 
   const StartMenuRef = useRef<HTMLDivElement>();
 
-  useClickOutside(StartMenuRef, () => toggleStartMenu());
+  useClickOutside(StartMenuRef, () => {
+    StartMenuRef.current.classList.add(styles.active);
+    setTimeout(() => {
+      toggleStartMenu();
+      StartMenuRef.current.classList.remove(styles.active);
+    }, 150);
+  });
 
   return showStartMenu ? (
     <div ref={StartMenuRef} class={styles.container}>
