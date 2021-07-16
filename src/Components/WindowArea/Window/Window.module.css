@@ -15,6 +15,11 @@
   color: black;
   animation: 0.3s Pop;
   animation-timing-function: cubic-bezier(0, 1, 0.5, 1.08);
+  transition: 0.2s transform ease, 0.2s opacity ease;
+}
+.container.close {
+  transform: scale(0.8);
+  opacity: 0.4;
 }
 
 @keyframes Pop {
@@ -53,11 +58,28 @@
   align-items: center;
   justify-content: center;
   margin: 2px;
-  margin-left: 16px;
-  margin-right: 16px;
-  transition: 0.2s color ease;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding: 5px 12px;
+  transition: 0.2s color ease, 0.2s transform ease;
   cursor: pointer;
+  border-radius: 4px;
 }
+.icon:active {
+  transform: scale(0.9);
+}
+[data-theme="dark"] .icon.close:hover,
+.icon.close:hover {
+  background: rgba(255, 0, 0, 0.562);
+}
+.icon:hover {
+  background: rgba(255, 255, 255, 0.555);
+}
+
+[data-theme="dark"] .icon:hover {
+  background: rgba(48, 49, 51, 0.774);
+}
+
 .title_stuff {
   display: flex;
   align-items: center;

@@ -11,6 +11,7 @@ import { useStore } from "nanostores/preact";
 import { ThemeStore } from "../../../store/darkMode";
 import { FunctionComponent } from "preact";
 import { OpenApps } from "../../../store/activeWindow";
+import { useRef } from "preact/hooks";
 
 interface Props {
   window_name: string;
@@ -33,6 +34,8 @@ export const WindowHolder: FunctionComponent<Props> = ({
   const ICON_COLOR_DARK = "#ffffff";
 
   const ICON_COLOR = theme === "dark" ? ICON_COLOR_DARK : ICON_COLOR_LIGHT;
+
+  const WindowRef = useRef<HTMLDivElement>();
   return (
     <Rnd
       default={{
@@ -46,7 +49,7 @@ export const WindowHolder: FunctionComponent<Props> = ({
       bounds="parent"
       dragHandleClassName="app-drag-handler"
     >
-      <div class={styles.container}>
+      <div ref={WindowRef} class={styles.container}>
         <div className={[styles.titlebar, "app-drag-handler"].join(" ")}>
           <div className={styles.title_stuff}>
             {show_back ? (
@@ -65,12 +68,16 @@ export const WindowHolder: FunctionComponent<Props> = ({
             </div>
             <div
               onClick={() => {
-                OpenApps.set({
-                  ...OpenedApps,
-                  [appid]: false,
-                });
+                WindowRef.current.classList.add(styles.close);
+                setTimeout(() => {
+                  OpenApps.set({
+                    ...OpenedApps,
+                    [appid]: false,
+                  });
+                  WindowRef.current.classList.remove(styles.close);
+                }, 100);
               }}
-              className={styles.icon}
+              className={[styles.icon, styles.close].join(" ")}
             >
               <CloseIcon color={ICON_COLOR} height="14" width="14" />
             </div>
