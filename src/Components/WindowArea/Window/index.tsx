@@ -76,7 +76,18 @@ export const WindowHolder: FunctionComponent<Props> = ({
             </div>
           </div>
         </div>
-        {children}
+        {children ? (
+          children
+        ) : (
+          <div className={styles.content}>
+            <img
+              class={styles.content_image}
+              src={window_icon}
+              alt={window_name}
+            />
+            <h4>Coming Soon!</h4>
+          </div>
+        )}
       </div>
     </Rnd>
   );
