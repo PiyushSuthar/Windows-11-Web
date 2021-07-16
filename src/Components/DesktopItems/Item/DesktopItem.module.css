@@ -1,0 +1,30 @@
+.desktop_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 80px;
+  padding: 8px;
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 5px;
+  cursor: context-menu;
+  border-radius: 4px;
+  transition: 0.3s color ease;
+}
+[data-theme="dark"] .desktop_item {
+  color: #fff;
+}
+.desktop_item_icon img {
+  width: 40px;
+}
+.desktop_item:hover,
+.desktop_item.active {
+  /* background-color: rgba(88, 174, 255, 0.438); */
+  background-color: rgba(131, 195, 255, 0.377);
+}
+
+[data-theme="dark"] .desktop_item:hover,
+[data-theme="dark"] .desktop_item.active {
+  background-color: rgba(131, 195, 255, 0.24);
+}
