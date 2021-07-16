@@ -9,14 +9,15 @@
   /* transition: 0.3s filtre ease; */
   transition: 0.1s all ease-in;
 }
-.button:hover {
-  --bg-dark: rgba(3, 21, 41, 0.562);
-  --bg-light: rgba(243, 243, 243, 0.747);
-  --bg-task-color: var(--bg-light);
-  background-color: var(--bg-task-color);
+.button:hover,
+.button.active {
+  background-color: rgba(243, 243, 243, 0.747);
 }
-[data-theme="dark"] .button {
-  --bg-task-color: var(--bg-dark);
+[data-theme="dark"] .button.active {
+  background-color: rgba(3, 21, 41, 0.562);
+}
+[data-theme="dark"] .button:hover {
+  background-color: rgba(3, 21, 41, 0.562);
 }
 .button img:active {
   transform: scale(0.8);
@@ -32,3 +33,44 @@
   image-rendering: crisp-edges;
   -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
 }
+
+/* The line below icon...
+it works somehow... So i'm not touching it further.
+Incase you can make it work better, please do.
+*/
+.button::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(0, 108, 209);
+  height: 3px;
+  width: 10px;
+  bottom: 6px;
+  border-radius: 10px;
+  /* animation: 0.2s popout ease; */
+  transform: scale(0);
+  transition: 0.2s transform ease, 0.3s background-color;
+}
+[data-theme="dark"] .button::after {
+  background-color: rgb(137, 146, 155);
+}
+.button.active::after {
+  transform: scale(1);
+  /* animation: 0.2s pop ease; */
+}
+/* 
+@keyframes pop {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes popout {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+} */
