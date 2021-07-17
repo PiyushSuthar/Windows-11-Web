@@ -1,4 +1,4 @@
-import { createStore } from 'nanostores'
+import { createStore, getValue } from 'nanostores'
 import { App, AppsConfig } from '../Configs/apps.config'
 
 type Apps = keyof typeof AppsConfig
@@ -17,3 +17,14 @@ export const OpenApps = createStore<App>(() => {
 export const ActiveApp = createStore<Apps>(() => {
     ActiveApp.set("edge")
 })
+
+export const openApp = (app_id: string) => {
+    let apps = getValue(OpenApps)
+    OpenApps.set({
+        ...apps,
+        [app_id]: {
+            ...apps[app_id],
+            isActive: true
+        }
+    })
+}
