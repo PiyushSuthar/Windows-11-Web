@@ -31,15 +31,15 @@ export const DesktopItem = (props: Item) => {
       {/* <ContextMenu items={FileContextMenu} containerRef={ItemRef} /> */}
       <div
         ref={ItemRef}
-        id="desktop-item"
+        id={props.context_menu_id}
         onClick={() => setIsActive(true)}
         onDblClick={onDBClickAction}
         class={[styles.desktop_item, isActive && styles.active].join(" ")}
       >
-        <div id="desktop-item" className={styles.desktop_item_icon}>
-          <img id="desktop-item" src={props.icon} alt={props.name} />
+        <div id={props.context_menu_id} className={styles.desktop_item_icon}>
+          <img id={props.context_menu_id} src={props.icon} alt={props.name} />
         </div>
-        <div id="desktop-item" class={styles.desktop_item_name}>
+        <div id={props.context_menu_id} class={styles.desktop_item_name}>
           {props.name}
         </div>
       </div>
