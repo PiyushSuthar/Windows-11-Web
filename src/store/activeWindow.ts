@@ -28,3 +28,15 @@ export const openApp = (app_id: string) => {
         }
     })
 }
+
+export const togglePinApp = (app_id: string) => {
+    let apps = getValue(OpenApps)
+    let isPinned = apps[app_id].pinned
+    OpenApps.set({
+        ...apps,
+        [app_id]: {
+            ...apps[app_id],
+            pinned: !isPinned
+        }
+    })
+}
