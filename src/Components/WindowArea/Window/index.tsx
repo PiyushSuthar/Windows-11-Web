@@ -11,13 +11,20 @@ import { useStore } from "nanostores/preact";
 import { ThemeStore } from "../../../store/darkMode";
 import { FunctionComponent } from "preact";
 import { OpenApps } from "../../../store/activeWindow";
-import { useRef } from "preact/hooks";
+import { useMemo, useRef } from "preact/hooks";
 
 interface Props {
   window_name: string;
   window_icon: string;
   show_back?: boolean;
   appid: string;
+}
+
+// Taken from puruVJ's macos web code :[]
+export function randint(lower: number, upper: number) {
+  if (lower > upper) [lower, upper] = [upper, lower];
+
+  return lower + Math.floor((upper - lower) * Math.random());
 }
 
 export const WindowHolder: FunctionComponent<Props> = ({
@@ -36,11 +43,15 @@ export const WindowHolder: FunctionComponent<Props> = ({
   const ICON_COLOR = theme === "dark" ? ICON_COLOR_DARK : ICON_COLOR_LIGHT;
 
   const WindowRef = useRef<HTMLDivElement>();
+
+  const randX = useMemo(() => randint(-800, 500), []);
+  const randY = useMemo(() => randint(-100, 100), []);
+
   return (
     <Rnd
       default={{
-        x: 50,
-        y: 50,
+        x: (document.body.clientWidth + randX) / 2,
+        y: (100 + randY) / 2,
         width: 320,
         height: 300,
       }}
@@ -72,7 +83,10 @@ export const WindowHolder: FunctionComponent<Props> = ({
                 setTimeout(() => {
                   OpenApps.set({
                     ...OpenedApps,
-                    [appid]: false,
+                    [appid]: {
+                      ...OpenedApps[appid],
+                      isActive: false,
+                    },
                   });
                   WindowRef.current.classList.remove(styles.close);
                 }, 100);
