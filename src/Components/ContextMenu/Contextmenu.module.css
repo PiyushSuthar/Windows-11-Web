@@ -12,6 +12,7 @@
   padding-top: 5px;
   padding-bottom: 5px;
   min-width: 220px;
+  z-index: 2;
 
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.031),
     0 6.7px 5.3px rgba(0, 0, 0, 0.044), 0 12.5px 10px rgba(0, 0, 0, 0.055),
@@ -40,17 +41,20 @@
 
 .context_item {
   padding: 3px 10px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 
   font-size: 12px;
   margin: 1px;
+  margin-left: 5px;
+  margin-right: 5px;
   cursor: pointer;
   transition: 0.1s all ease-in;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-radius: 5px;
 }
 .context_item.disabled {
   cursor: context-menu;
@@ -66,7 +70,7 @@
 }
 [data-theme="dark"] .context_item:not(.disabled):hover {
   /* background-color: rgb(73, 73, 73); */
-  background: rgba(3, 21, 41, 0.616);
+  background: rgba(134, 134, 134, 0.26);
 }
 
 .context_item:not(.disabled):active {
