@@ -1,5 +1,5 @@
 import { ContextItem } from "../../../Components/ContextMenu";
-import { openApp } from "../../../store/activeWindow";
+import { openApp, togglePinApp } from "../../../store/activeWindow";
 
 export const ThisPC_CTX_MENU: ContextItem[] = [
     {
@@ -11,7 +11,8 @@ export const ThisPC_CTX_MENU: ContextItem[] = [
         text: "Manage"
     }, {
         text: "Pin to Start",
-        divideNext: true
+        divideNext: true,
+        onClick: () => togglePinApp("this-pc")
     }, {
         text: "Map network drive...",
     }, {
