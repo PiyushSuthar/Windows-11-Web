@@ -4,14 +4,18 @@ export interface Item {
     name: string;
     action?: () => void
     icon: string;
+    appId: string
 }
 export const DesktopItems: Item[] = [{
     name: 'This PC',
-    icon: ThisPC
+    icon: ThisPC,
+    appId: "this-pc"
 }, {
     name: "Recycle Bin",
-    icon: RecycleBin
+    icon: RecycleBin,
+    appId: "recycle-bin"
 }, {
     name: "Control Panel",
-    icon: ControlPanel
+    icon: ControlPanel,
+    appId: "control-panel"
 }]

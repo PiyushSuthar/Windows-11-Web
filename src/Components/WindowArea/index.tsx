@@ -11,18 +11,19 @@ export const WindowArea = () => {
   const OpenedApps = useStore(OpenApps);
   return (
     <Suspense fallback={<span></span>}>
-      {Object.keys(AppsConfig).map(
-        (appid, index) =>
-          AppsConfig[appid] &&
-          OpenedApps[appid] && (
+      {Object.keys(OpenedApps).map((appid, index) => {
+        let app = OpenedApps[appid];
+        return (
+          app.isActive && (
             <Window
-              window_icon={AppsConfig[appid].icon}
-              window_name={AppsConfig[appid].title}
+              window_icon={app.icon}
+              window_name={app.title}
               key={index}
               appid={appid}
             />
           )
-      )}
+        );
+      })}
     </Suspense>
   );
 };
