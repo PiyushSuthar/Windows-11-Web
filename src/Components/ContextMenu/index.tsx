@@ -5,6 +5,9 @@ import { useFocusOutside } from "../../hooks/useFocusOutside";
 import { ChevronIcon } from "../StartMenu/PinnedApps";
 import styles from "./Contextmenu.module.css";
 
+// Context Menus
+import { getContextMenu } from "../../Configs/ContextMenus";
+
 interface Props {
   containerRef: RefObject<HTMLDivElement>;
   items: ContextItem[];
@@ -20,10 +23,15 @@ export interface ContextItem {
 }
 
 export const ContextMenu = ({ containerRef, items }: Props) => {
-  const { isMenuVisible, setIsMenuVisible, xPos, yPos, transformOrigin } =
-    useContextMenu(containerRef);
-
   const contextmenuRef = useRef<HTMLDivElement>();
+  const {
+    isMenuVisible,
+    setIsMenuVisible,
+    xPos,
+    yPos,
+    transformOrigin,
+    targetEleId,
+  } = useContextMenu(containerRef, contextmenuRef);
 
   useEffect(() => {
     isMenuVisible && contextmenuRef.current.focus();
@@ -34,6 +42,7 @@ export const ContextMenu = ({ containerRef, items }: Props) => {
     () => isMenuVisible && setIsMenuVisible(false)
   );
 
+  let MENU = getContextMenu(targetEleId);
   // TODO: Add Icons
   const Contextitem = ({
     text,
@@ -71,7 +80,7 @@ export const ContextMenu = ({ containerRef, items }: Props) => {
       }}
       class={styles.context_menu}
     >
-      {items.map((item, index) => (
+      {MENU.map((item, index) => (
         <Contextitem key={index} {...item} />
       ))}
     </div>

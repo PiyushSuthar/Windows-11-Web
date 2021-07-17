@@ -1,13 +1,14 @@
 import { RefObject } from 'preact';
 import { useEffect, useCallback, useState } from 'preact/hooks';
 
-export const useContextMenu = <T extends HTMLElement>(outerRef: RefObject<T>) => {
+export const useContextMenu = <T extends HTMLElement>(outerRef: RefObject<T>, contextMenuRef: RefObject<T>) => {
   const [xPos, setXPos] = useState('0px');
   const [yPos, setYPos] = useState('0px');
   const [transformOrigin, setTransformOrigin] = useState({
     x: "top",
     y: "left"
   });
+  const [targetEleId, setTargetEleId] = useState('');
 
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
@@ -22,9 +23,10 @@ export const useContextMenu = <T extends HTMLElement>(outerRef: RefObject<T>) =>
     let transformOrigin_x = "top";
     let transformOrigin_y = "left";
 
+    // TODO: Make this responsive and according to the height of the context menu.
     // Open to other side if rest of space is too small
-    if (window.innerWidth - x < 250) {
-      x -= 250
+    if (window.innerWidth - x < 220) {
+      x -= 220
       // For some reason, it worked ;)
       transformOrigin_y = "right";
     };
@@ -40,6 +42,9 @@ export const useContextMenu = <T extends HTMLElement>(outerRef: RefObject<T>) =>
       x: transformOrigin_x,
       y: transformOrigin_y
     })
+
+    // To use different context menu for different elements
+    setTargetEleId((event.target as HTMLElement).id)
 
     setIsMenuVisible(true);
 
@@ -58,5 +63,5 @@ export const useContextMenu = <T extends HTMLElement>(outerRef: RefObject<T>) =>
     };
   }, []);
 
-  return { xPos, yPos, isMenuVisible, setIsMenuVisible, transformOrigin };
+  return { xPos, yPos, isMenuVisible, setIsMenuVisible, transformOrigin, targetEleId };
 };
