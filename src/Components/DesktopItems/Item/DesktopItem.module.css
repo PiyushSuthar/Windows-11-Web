@@ -17,6 +17,7 @@
 }
 .desktop_item_icon img {
   width: 40px;
+  user-select: none;
 }
 .desktop_item:hover,
 .desktop_item.active {
