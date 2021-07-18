@@ -20,68 +20,81 @@ import {
 } from "../assets/icons/startmenu"
 
 export type PinnedApp = {
-    name: string;
+    appId?: string
+    title: string;
     icon: string;
     action?: () => void;
     isLink?: boolean;
     url?: string;
+    pinned?: boolean
 }
 export const PinnedApps: PinnedApp[] = [{
-    name: "GitHub",
+    title: "GitHub",
     icon: GitHubIcon,
     isLink: true,
     url: "https://github.com/piyushsuthar/windows-11-web"
 }, {
-    name: "Twitter",
+    title: "Twitter",
     icon: TwitterIcon,
     isLink: true,
     url: "https://twitter.com/piyushsthr"
 }, {
-    name: "Edge",
+    title: "Edge",
     icon: MSEdgeIcon
 }, {
-    name: "Word",
+    title: "Word",
     icon: MSWordIcon
 }, {
-    name: "Photos",
+    title: "Photos",
     icon: PhotosIcon
 }, {
-    name: "PowerPoint",
+    title: "PowerPoint",
     icon: MSPPTIcon
 }, {
-    name: "PhotoShop",
+    title: "PhotoShop",
     icon: PhotoShopIcon
 }, {
-    name: "Movies & TV",
+    title: "Movies & TV",
     icon: MoviesIcon
 }, {
-    name: "Chrome",
+    title: "Chrome",
     icon: ChromeIcon
 }, {
-    name: "Teams",
+    title: "Teams",
     icon: MSTeamsIcon
 }, {
-    name: "VSCode",
+    title: "VSCode",
     icon: VSCodeIcon
 }, {
-    name: "Music",
+    title: "Music",
     icon: MSGrooveIcon
 }, {
-    name: "Excel",
+    title: "Excel",
     icon: MSExcelIcon
 }, {
-    name: "Your Phone",
+    title: "Your Phone",
     icon: YourHelpIcon
 }, {
-    name: "Store",
-    icon: MSStoreIcon
+    title: "Store",
+    icon: MSStoreIcon,
+    appId: "ms-store",
+    pinned: true
 }, {
-    name: "Weather",
+    title: "Weather",
     icon: WeatherIcon
 }, {
-    name: "Whiteboard",
+    title: "Whiteboard",
     icon: WhiteBoardIcon
 }, {
-    name: "Solitare",
+    title: "Solitare",
     icon: SolitareIcon
 }]
+
+export const Apps = PinnedApps.reduce((acc, app) => {
+    return {
+        ...acc,
+        [app.appId || app.title]: {
+            ...app
+        }
+    }
+}, {})
