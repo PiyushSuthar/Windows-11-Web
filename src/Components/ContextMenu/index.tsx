@@ -59,9 +59,22 @@ export const ContextMenu = ({ containerRef, items }: Props) => {
       >
         <p>{text}</p>
         {subitems && (
-          <div className="chevron_icon">
-            <ChevronIcon size="16" />
-          </div>
+          <>
+            <div className="chevron_icon">
+              <ChevronIcon size="16" />
+            </div>
+            <div
+              style={{
+                [transformOrigin.y]: "101%",
+                transformOrigin: `top ${transformOrigin.y}`,
+              }}
+              class={styles.submenu_items}
+            >
+              {subitems.map((item) => (
+                <Contextitem text={item.text} />
+              ))}
+            </div>
+          </>
         )}
       </div>
       {divideNext && <ContextDivider />}
