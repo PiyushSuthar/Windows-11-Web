@@ -2,6 +2,8 @@ import {
   PinnedApp,
   PinnedApps as PinnedAppsArray,
 } from "../../../Configs/startMenu.config";
+import { openApp } from "../../../store/activeWindow";
+import { toggleStartMenu } from "../../../store/startMenu";
 import styles from "./PinnedApps.module.css";
 
 export const ChevronIcon = ({ size = "24" }) => (
@@ -20,22 +22,6 @@ export const ChevronIcon = ({ size = "24" }) => (
     <polyline points="9 18 15 12 9 6"></polyline>
   </svg>
 );
-
-const App = ({ name, icon, action, isLink, url }: PinnedApp) => {
-  const RequiresWrapper = () => (
-    <div onClick={action && action} class={styles.app}>
-      <img src={icon} alt={name} />
-      <p>{name}</p>
-    </div>
-  );
-  return isLink ? (
-    <a class={styles.link} href={url} target="_blank" rel="noopener noreferrer">
-      <RequiresWrapper />
-    </a>
-  ) : (
-    <RequiresWrapper />
-  );
-};
 
 export const Button = ({ children }: { children: string }) => (
   <button class={styles.button}>
@@ -57,13 +43,47 @@ export const TitleArea = ({ title, button }: TitleProps) => (
     </div>
   </div>
 );
-export const PinnedApps = () => {
+
+interface props {
+  hideStartMenu: () => any;
+}
+export const PinnedApps = ({ hideStartMenu }: props) => {
+  const App = ({ title, appId, icon, action, isLink, url }: PinnedApp) => {
+    const RequiresWrapper = () => (
+      <div
+        onClick={
+          (action && action) ||
+          (() => {
+            openApp(appId || title);
+            hideStartMenu();
+          })
+        }
+        class={styles.app}
+      >
+        <img src={icon} alt={title} />
+        <p>{title}</p>
+      </div>
+    );
+    return isLink ? (
+      <a
+        class={styles.link}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <RequiresWrapper />
+      </a>
+    ) : (
+      <RequiresWrapper />
+    );
+  };
+
   return (
     <div class={styles.container}>
       <TitleArea title="Pinned" button="All Apps" />
       <div class={styles.apps}>
         {PinnedAppsArray.map((pinnedapp, index) => (
-          <App {...pinnedapp} key={pinnedapp.name} />
+          <App {...pinnedapp} key={pinnedapp.title} />
         ))}
       </div>
     </div>

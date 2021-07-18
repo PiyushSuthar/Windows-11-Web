@@ -17,13 +17,14 @@ export const Startmenu = () => {
 
   const StartMenuRef = useRef<HTMLDivElement>();
 
-  useClickOutside(StartMenuRef, () => {
+  const hideStartMenu = () => {
     StartMenuRef.current.classList.add(styles.active);
     setTimeout(() => {
       toggleStartMenu();
       StartMenuRef.current.classList.remove(styles.active);
     }, 150);
-  });
+  };
+  useClickOutside(StartMenuRef, hideStartMenu);
 
   return showStartMenu ? (
     <div ref={StartMenuRef} class={styles.container}>
@@ -31,7 +32,7 @@ export const Startmenu = () => {
         <SearchBar />
       </div>
       <div class={styles.inner_container}>
-        <PinnedApps />
+        <PinnedApps hideStartMenu={hideStartMenu} />
       </div>
       <div class={styles.inner_container}>
         <RecommendedApps />
