@@ -4,6 +4,7 @@ import taskmanager from '../assets/icons/taskbar/taskmanager.png'
 import widget from '../assets/icons/taskbar/Widgets.png'
 
 import { toggleStartMenu } from '../store/startMenu'
+import { toggleWidgets } from '../store/widgets'
 // import { StartMenuIcon } from '../assets/icons/startmenu'
 
 export interface icon {
@@ -23,5 +24,6 @@ export const ICONS: icon[] = [{
   url: taskmanager
 }, {
   name: "Widgets",
-  url: widget
+  url: widget,
+  action: toggleWidgets
 }]

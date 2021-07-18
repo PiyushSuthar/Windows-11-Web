@@ -10,6 +10,7 @@ import { WindowArea } from "../../Components/WindowArea";
 import { lazy, Suspense } from "preact/compat";
 import { defaultContextMenuConfig } from "../../Configs/ContextMenus/default.config";
 import { DesktopItems } from "../../Components/DesktopItems";
+// import { Widgets } from "../../Components/Widgets";
 
 const ContextMenu = lazy(() =>
   import("../../Components/ContextMenu").then(({ ContextMenu }) => ({
@@ -20,6 +21,11 @@ const ContextMenu = lazy(() =>
 const Startmenu = lazy(() =>
   import("../../Components/StartMenu").then(({ Startmenu }) => ({
     default: Startmenu,
+  }))
+);
+const Widgets = lazy(() =>
+  import("../../Components/Widgets").then(({ Widgets }) => ({
+    default: Widgets,
   }))
 );
 
@@ -42,6 +48,7 @@ export const Desktop = (props: Props) => {
           items={defaultContextMenuConfig}
           containerRef={ContainerRef}
         />
+        <Widgets />
         <Startmenu />
       </Suspense>
       <TaskBar />
