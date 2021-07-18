@@ -3,7 +3,7 @@ import { Item } from "../../../Configs/DesktopItems.config";
 import { useRef, useState } from "preact/hooks";
 import useClickOutside from "../../../hooks/useClickOutside";
 import { useStore } from "nanostores/preact";
-import { OpenApps } from "../../../store/activeWindow";
+import { openApp, OpenApps } from "../../../store/activeWindow";
 // import { FileContextMenu } from "../../../Configs/ContextMenus/file.config";
 // import { ContextMenu } from "../../ContextMenu";
 
@@ -17,13 +17,7 @@ export const DesktopItem = (props: Item) => {
   const onDBClickAction =
     props.action ||
     (() => {
-      OpenApps.set({
-        ...OpenedApps,
-        [props.appId!]: {
-          ...(OpenedApps[props.appId!] || {}),
-          isActive: true,
-        },
-      });
+      openApp(props.appId);
       setIsActive(false);
     });
   return (

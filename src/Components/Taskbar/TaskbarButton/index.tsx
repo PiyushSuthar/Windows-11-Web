@@ -1,7 +1,7 @@
 import styles from "./taskbarbutton.module.css";
 import { icon } from "../../../Configs/Taskbar.config";
 import { useStore } from "nanostores/preact";
-import { OpenApps } from "../../../store/activeWindow";
+import { OpenApps, openApp } from "../../../store/activeWindow";
 
 interface Props {
   appId?: string;
@@ -9,17 +9,8 @@ interface Props {
 export const TaskBarButton = (props: icon & Props) => {
   const OpenedApps = useStore(OpenApps);
   const onClickAction =
-    props.action ||
-    (() => {
-      OpenedApps[props.appId!] &&
-        OpenApps.set({
-          ...OpenedApps,
-          [props.appId!]: {
-            ...OpenedApps[props.appId!],
-            isActive: true,
-          },
-        });
-    });
+    props.action || (() => props.appId && openApp(props.appId!));
+
   let isAppOpen = props.appId && OpenedApps[props.appId].isActive;
   return (
     <div
