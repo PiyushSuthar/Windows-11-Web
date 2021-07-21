@@ -2,6 +2,7 @@ import { useStore } from "nanostores/preact";
 import { useRef } from "preact/hooks";
 import useClickOutside from "../../hooks/useClickOutside";
 import { ShowWidgetStore, toggleWidgets } from "../../store/widgets";
+import { SearchBar } from "../StartMenu/SearchBar";
 import { WidgetClock } from "./Clock";
 import styles from "./Widgets.module.css";
 
@@ -16,9 +17,20 @@ export const Widgets = () => {
       toggleWidgets();
     }, 150);
   });
+
+  const UserImage = () => (
+    <div className={styles.userImage}>
+      <img src="https://avatars.githubusercontent.com/u/32237558?v=4&s=50" />
+    </div>
+  );
   return showWidgets ? (
     <div ref={WidgetsRef} class={styles.container}>
       <WidgetClock />
+      <UserImage />
+      <SearchBar
+        placeholder="Type here to search the web"
+        className={styles.searchBar}
+      />
     </div>
   ) : null;
 };

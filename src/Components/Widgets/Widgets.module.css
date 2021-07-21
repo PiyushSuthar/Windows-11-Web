@@ -21,6 +21,9 @@
   animation-timing-function: cubic-bezier(0.3, 0.5, 0, 1);
 
   padding: 10px;
+
+  display: flex;
+  flex-direction: column;
 }
 .container.hide {
   animation: 0.2s slideout ease;
@@ -28,8 +31,18 @@
 
 [data-theme="dark"] .container {
   background: rgba(3, 21, 41, 0.562);
+  color: #fff;
 }
 
+.userImage {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.userImage img {
+  border-radius: 50%;
+  width: 30px;
+}
 @keyframes slideIn {
   from {
     transform: translate(-100%, 0%);
@@ -45,4 +58,13 @@
   to {
     transform: translate(-100%, 0%);
   }
+}
+
+.searchBar {
+  background-color: rgba(255, 255, 255, 0.411) !important;
+  border: none !important;
+  margin-top: 10px;
+}
+[data-theme="dark"] .searchBar {
+  background-color: rgba(57, 65, 88, 0.377) !important;
 }
