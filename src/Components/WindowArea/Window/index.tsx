@@ -11,7 +11,7 @@ import { useStore } from "nanostores/preact";
 import { ThemeStore } from "../../../store/darkMode";
 import { FunctionComponent } from "preact";
 import { OpenApps } from "../../../store/activeWindow";
-import { useMemo, useRef } from "preact/hooks";
+import { useMemo, useRef, useState } from "preact/hooks";
 
 interface Props {
   window_name: string;
@@ -47,6 +47,8 @@ export const WindowHolder: FunctionComponent<Props> = ({
   const randX = useMemo(() => randint(-800, 500), []);
   const randY = useMemo(() => randint(-100, 100), []);
 
+  const [isMaximized, setIsMaximized] = useState(false);
+
   return (
     <Rnd
       default={{
@@ -58,6 +60,20 @@ export const WindowHolder: FunctionComponent<Props> = ({
       minWidth="300"
       minHeight="300"
       bounds="parent"
+      style={{
+        transition: "height 0.3s ease, width 0.3s ease",
+        // transition: "all 0.3s ease",
+      }}
+      size={{
+        width: isMaximized ? document.body.clientWidth : 320,
+        height: isMaximized ? document.body.clientHeight - 50 : 300,
+      }}
+      {...{
+        position: isMaximized && {
+          x: isMaximized ? 0 : undefined,
+          y: isMaximized ? 0 : undefined,
+        },
+      }}
       dragHandleClassName="app-drag-handler"
     >
       <div ref={WindowRef} class={styles.container}>
@@ -74,7 +90,12 @@ export const WindowHolder: FunctionComponent<Props> = ({
             <div className={styles.icon}>
               <MinimizeIcon height="14" width="14" color={ICON_COLOR} />
             </div>
-            <div className={styles.icon}>
+            <div
+              onClick={() => {
+                setIsMaximized((prev) => !prev);
+              }}
+              className={styles.icon}
+            >
               <MaximizeIcon color={ICON_COLOR} height="14" width="14" />
             </div>
             <div
