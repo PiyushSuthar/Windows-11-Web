@@ -12,7 +12,11 @@ export const Clock = () => {
   });
   return (
     <div className={styles.container}>
-      <div className="time">{time.toLocaleTimeString()}</div>
+      <div className="time">
+        {time.toLocaleTimeString("en-us", {
+          timeStyle: "short",
+        })}
+      </div>
       <div className="date">{time.toLocaleDateString()}</div>
     </div>
   );
