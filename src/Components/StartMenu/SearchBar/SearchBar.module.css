@@ -1,8 +1,8 @@
 .search_container {
-  --search-bg: #fff;
+  --search-bg: ;
   display: flex;
   width: 100%;
-  background-color: var(--search-bg);
+  background-color: #fff;
   border-radius: 5px;
   box-shadow: 0px 3px 5px 0 rgba(0, 0, 0, 0.1);
   border-bottom: 2px rgb(68, 137, 170) solid;
@@ -12,7 +12,7 @@
   transition: 0.2s all ease;
 }
 [data-theme="dark"] .search_container {
-  --search-bg: rgb(24, 34, 61);
+  background-color: rgb(24, 34, 61);
   color: #fff;
 }
 
