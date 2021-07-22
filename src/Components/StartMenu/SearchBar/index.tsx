@@ -4,7 +4,7 @@ import { SearchIcon } from "./searchIcon";
 interface Props {
   placeholder?: string;
   onSearch?: (query: string) => void;
-  className: string;
+  className?: string;
 }
 export const SearchBar = ({
   placeholder = "Type here to search",
