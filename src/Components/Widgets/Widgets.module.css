@@ -14,13 +14,13 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  min-width: 400px;
+  width: clamp(400px, 40%, 1000px);
 
   transition: 0.2s background ease;
   animation: 0.4s slideIn;
   animation-timing-function: cubic-bezier(0.3, 0.5, 0, 1);
 
-  padding: 10px;
+  padding: 10px 4%;
 
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@
 }
 
 [data-theme="dark"] .container {
-  background: rgba(3, 21, 41, 0.562);
+  background: rgba(47, 70, 95, 0.37);
   color: #fff;
 }
 
@@ -66,5 +66,11 @@
   margin-top: 10px;
 }
 [data-theme="dark"] .searchBar {
-  background-color: rgba(57, 65, 88, 0.377) !important;
+  background-color: rgba(33, 36, 48, 0.568) !important;
+}
+
+.widgets_conatiner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
