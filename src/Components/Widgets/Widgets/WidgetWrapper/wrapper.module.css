@@ -1,0 +1,29 @@
+.wrapper {
+  width: 48%;
+  padding: 5px 10px 10px 10px;
+  border-radius: 6px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+.wrapper:nth-child(even) {
+  margin-left: 15px;
+}
+
+.info_bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 12px;
+  justify-content: center;
+}
+.icon {
+  width: 20px;
+}

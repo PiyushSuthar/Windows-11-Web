@@ -4,6 +4,7 @@ import useClickOutside from "../../hooks/useClickOutside";
 import { ShowWidgetStore, toggleWidgets } from "../../store/widgets";
 import { SearchBar } from "../StartMenu/SearchBar";
 import { WidgetClock } from "./Clock";
+import { WidgetsContaner } from "./Widgets";
 import styles from "./Widgets.module.css";
 
 export const Widgets = () => {
@@ -31,6 +32,7 @@ export const Widgets = () => {
         placeholder="Type here to search the web"
         className={styles.searchBar}
       />
+      <WidgetsContaner />
     </div>
   ) : null;
 };
