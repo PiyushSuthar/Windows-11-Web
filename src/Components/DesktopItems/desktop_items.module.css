@@ -1,5 +1,12 @@
 .container {
   padding: 10px;
+  /* display: flex;
+  flex-direction: column; */
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: normal;
+  align-content: flex-start;
+  max-height: calc(100vh - 50px);
 }

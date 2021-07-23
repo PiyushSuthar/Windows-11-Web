@@ -28,6 +28,7 @@ export const DesktopItem = (props: Item) => {
         id={props.context_menu_id}
         onClick={() => setIsActive(true)}
         onDblClick={onDBClickAction}
+        draggable
         class={[styles.desktop_item, isActive && styles.active].join(" ")}
       >
         <div id={props.context_menu_id} className={styles.desktop_item_icon}>
