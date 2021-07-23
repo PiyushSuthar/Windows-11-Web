@@ -61,13 +61,15 @@ export const WindowHolder: FunctionComponent<Props> = ({
       minHeight="300"
       bounds="parent"
       style={{
-        transition: "height 0.3s ease, width 0.3s ease",
+        transition: "height 0.2s ease, width 0.2s ease",
         // transition: "all 0.3s ease",
       }}
-      size={{
-        width: isMaximized ? document.body.clientWidth : 320,
-        height: isMaximized ? document.body.clientHeight - 50 : 300,
-      }}
+      size={
+        isMaximized && {
+          width: isMaximized ? document.body.clientWidth : 320,
+          height: isMaximized ? document.body.clientHeight - 50 : 300,
+        }
+      }
       {...{
         position: isMaximized && {
           x: isMaximized ? 0 : undefined,
