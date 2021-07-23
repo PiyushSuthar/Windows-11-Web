@@ -52,11 +52,13 @@ export const PinnedApps = ({ hideStartMenu }: props) => {
     const RequiresWrapper = () => (
       <div
         onClick={
-          (action && action) ||
-          (() => {
-            openApp(appId || title);
-            hideStartMenu();
-          })
+          isLink
+            ? undefined
+            : (action && action) ||
+              (() => {
+                openApp(appId || title);
+                hideStartMenu();
+              })
         }
         class={styles.app}
       >
