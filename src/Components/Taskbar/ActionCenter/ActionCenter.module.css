@@ -3,7 +3,33 @@
   font-size: 13px;
   padding: 5px;
   transition: 0.2s color;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 [data-theme="dark"] .container {
   color: #fff;
+}
+
+.action_buttons {
+  display: flex;
+  flex-direction: row;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 2px;
+}
+.action_buttons:hover {
+  background-color: #c5c5c57a;
+}
+[data-theme="dark"] .action_buttons:hover {
+  background-color: rgba(173, 173, 173, 0.089);
+}
+.action_button {
+  margin: 2px;
+}
+
+.system_tray {
+  cursor: pointer;
+  margin-right: 8px;
 }
