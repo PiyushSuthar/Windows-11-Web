@@ -1,5 +1,5 @@
 import startMenu from '../assets/icons/taskbar/Windows.png'
-import search from '../assets/icons/taskbar/search.ico'
+import search from '../assets/icons/taskbar/search.png'
 import taskmanager from '../assets/icons/taskbar/taskmanager.png'
 import widget from '../assets/icons/taskbar/Widgets.png'
 
