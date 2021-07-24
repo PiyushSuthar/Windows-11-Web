@@ -60,6 +60,12 @@
         gtag("js", new Date());
 
         gtag("config", "G-4RJJLPN38T");
+
+        if ("serviceWorker" in navigator) {
+          window.addEventListener("load", function () {
+            navigator.serviceWorker.register("/sw.js");
+          });
+        }
       }
     </script>
   </body>
