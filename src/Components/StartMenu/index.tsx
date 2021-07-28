@@ -4,7 +4,7 @@ import useClickOutside from "../../hooks/useClickOutside";
 import { useFocusOutside } from "../../hooks/useFocusOutside";
 import {
   showStartMenu as isStartMenuVisible,
-  toggleStartMenu,
+  closeStartMenu,
 } from "../../store/startMenu";
 import { SearchBar } from "./SearchBar";
 import { PinnedApps } from "./PinnedApps";
@@ -20,7 +20,7 @@ export const Startmenu = () => {
   const hideStartMenu = () => {
     StartMenuRef.current.classList.add(styles.active);
     setTimeout(() => {
-      toggleStartMenu();
+      closeStartMenu();
       StartMenuRef.current.classList.remove(styles.active);
     }, 150);
   };

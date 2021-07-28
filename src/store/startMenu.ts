@@ -4,5 +4,12 @@ export const showStartMenu = createStore<Boolean>(() => {
   showStartMenu.set(false)
 })
 export const toggleStartMenu = () => {
-  showStartMenu.set(!getValue(showStartMenu))
-}
+  getValue(showStartMenu)
+    ? setTimeout(() => {
+        showStartMenu.set(false);
+      }, 150)
+    : showStartMenu.set(true);
+};
+export const closeStartMenu = () => {
+  showStartMenu.set(false);
+};
