@@ -3,7 +3,7 @@ import { ICONS } from "../../Configs/Taskbar.config";
 import { ThemeStore, toggleTheme } from "../../store/darkMode";
 import styles from "./taskbar.module.css";
 import { TaskBarButton } from "./TaskbarButton";
-import startMenu from '../../assets/icons/taskbar/windows.png'
+import startMenu from '../../assets/icons/taskbar/Windows.png'
 import dark_mode_search_icon from "../../assets/icons/taskbar/search-dark.svg";
 import light_mode_search_icon from "../../assets/icons/taskbar/search-light.svg";
 import dark_mode_icon from "../../assets/icons/taskbar/dark_mode.png";
