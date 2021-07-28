@@ -4,7 +4,7 @@ import useClickOutside from "../../hooks/useClickOutside";
 import { useFocusOutside } from "../../hooks/useFocusOutside";
 import {
   showStartMenu as isStartMenuVisible,
-  toggleStartMenu,
+  closeStartMenu,
 } from "../../store/startMenu";
 import { SearchBar } from "./SearchBar";
 import { PinnedApps } from "./PinnedApps";
