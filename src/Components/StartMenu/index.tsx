@@ -20,7 +20,7 @@ export const Startmenu = () => {
   const hideStartMenu = () => {
     StartMenuRef.current.classList.add(styles.active);
     setTimeout(() => {
-      toggleStartMenu();
+      closeStartMenu();
       StartMenuRef.current.classList.remove(styles.active);
     }, 150);
   };
