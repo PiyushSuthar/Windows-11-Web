@@ -1,7 +1,11 @@
 import { useStore } from "nanostores/preact";
 import { useRef } from "preact/hooks";
 import useClickOutside from "../../hooks/useClickOutside";
-import { ShowWidgetStore, toggleWidgets } from "../../store/widgets";
+import {
+  hideWidgets,
+  ShowWidgetStore,
+  toggleWidgets,
+} from "../../store/widgets";
 import { SearchBar } from "../StartMenu/SearchBar";
 import { WidgetClock } from "./Clock";
 import { WidgetsContaner } from "./Widgets";
@@ -15,7 +19,7 @@ export const Widgets = () => {
     WidgetsRef.current.classList.add(styles.hide);
     setTimeout(() => {
       WidgetsRef.current.classList.remove(styles.hide);
-      toggleWidgets();
+      hideWidgets();
     }, 150);
   });
 
