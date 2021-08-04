@@ -28,6 +28,13 @@ const Widgets = lazy(() =>
     default: Widgets,
   }))
 );
+const NotificationPanel = lazy(() =>
+  import("../../Components/Taskbar/ActionCenter/NotificationPanel").then(
+    ({ NotificationPanel }) => ({
+      default: NotificationPanel,
+    })
+  )
+);
 
 interface Props {}
 
@@ -50,6 +57,7 @@ export const Desktop = (props: Props) => {
         />
         <Widgets />
         <Startmenu />
+        <NotificationPanel />
       </Suspense>
       <TaskBar />
       <audio hidden autoPlay={import.meta.env.PROD} src={StartUpSound}></audio>

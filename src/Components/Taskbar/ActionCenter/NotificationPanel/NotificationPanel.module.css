@@ -1,0 +1,67 @@
+.container {
+  position: absolute;
+  background-color: #fff;
+  bottom: 60px;
+  right: 5px;
+  width: 10%;
+  min-width: 250px;
+  backdrop-filter: blur(20.5px);
+  -webkit-backdrop-filter: blur(20.5px);
+  border-radius: 6px;
+  transition: 0.2s background ease;
+  animation: 0.4s slideUp;
+  animation-timing-function: cubic-bezier(0.3, 0.5, 0, 1);
+  background: transparent;
+  display: flex;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07);
+  flex-direction: column;
+  overflow: hidden;
+  /* transition: 0.3s transform ease; */
+}
+.container.active {
+  animation: 0.2s slideDown ease;
+  /* animation-timing-function: cubic-bezier(0.3, 0.5, 0, 1); */
+}
+[data-theme="dark"] .container {
+  color: rgba(255, 255, 255, 0.836);
+}
+[data-theme="dark"] .inner_container {
+  background: rgba(28, 33, 39, 0.63);
+}
+[data-theme="dark"] .sub_container {
+  background: rgba(3, 21, 41, 0.562);
+}
+.inner_container,
+.sub_container {
+  padding: 15px;
+  padding-bottom: 5px;
+  width: 100%;
+  transition: 0.2s background ease;
+}
+.sub_container {
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.527);
+}
+.inner_container {
+  background: rgba(255, 255, 255, 0.596);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
