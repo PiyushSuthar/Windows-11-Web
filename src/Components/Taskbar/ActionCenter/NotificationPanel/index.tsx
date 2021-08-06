@@ -5,8 +5,11 @@ import {
   closeActionCenter,
   showActionCenter,
 } from "../../../../store/actionCenter";
+import { BatteryIcon } from "../icons/battery";
+import { PencilIcon, SettingsIcon } from "../icons/settings";
 import { Actions } from "./Actions";
 import styles from "./NotificationPanel.module.css";
+import { Sliders } from "./Slider";
 
 export const NotificationPanel = () => {
   const isActionCenterVisible = useStore(showActionCenter);
@@ -18,7 +21,7 @@ export const NotificationPanel = () => {
     setTimeout(() => {
       closeActionCenter();
       ActionCenterRef.current.classList.remove(styles.active);
-    }, 150);
+    }, 140);
   };
   useClickOutside(ActionCenterRef, hideActionCenter);
 
@@ -26,9 +29,18 @@ export const NotificationPanel = () => {
     <div ref={ActionCenterRef} class={styles.container}>
       <div class={styles.inner_container}>
         <Actions />
-        Coming Soon!
+        <Sliders />
       </div>
-      <div class={styles.sub_container}></div>
+      <div class={styles.sub_container}>
+        <div class={styles.battery_indicator}>
+          <BatteryIcon />
+          <p>69%</p>
+        </div>
+        <div class={styles.other_icons}>
+          <PencilIcon size="16" />
+          <SettingsIcon size="16" />
+        </div>
+      </div>
     </div>
   ) : null;
 };
