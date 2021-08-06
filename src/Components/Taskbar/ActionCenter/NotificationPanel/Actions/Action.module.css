@@ -1,0 +1,45 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  padding: 5px;
+}
+
+.action_container {
+  height: 100%;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+.icon {
+  padding: 12px 5px;
+  border-radius: 4px;
+  background-color: #ffffff3b;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 2px;
+}
+
+.action_container:hover .icon:not(.active) {
+  background-color: #ffffff79;
+}
+
+.icon.active {
+  color: white;
+  background-color: #0652f7;
+}
+
+[data-theme="dark"] .icon.active {
+  background-color: #69d3fa;
+  color: rgb(27, 27, 27);
+}
+
+[data-theme="dark"] .icon {
+  background-color: #ffffff0e;
+}
