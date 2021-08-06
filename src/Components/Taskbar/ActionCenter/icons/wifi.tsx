@@ -1,8 +1,8 @@
-export const WifiIcon = () => (
+export const WifiIcon = ({ size = "18" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="18"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
