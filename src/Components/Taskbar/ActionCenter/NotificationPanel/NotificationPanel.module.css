@@ -2,9 +2,9 @@
   position: absolute;
   background-color: #fff;
   bottom: 60px;
-  right: 5px;
+  right: 10px;
   width: 10%;
-  min-width: 250px;
+  min-width: 300px;
   backdrop-filter: blur(20.5px);
   -webkit-backdrop-filter: blur(20.5px);
   border-radius: 6px;
@@ -44,9 +44,20 @@
 .sub_container {
   padding: 15px;
   background: rgba(255, 255, 255, 0.527);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .inner_container {
   background: rgba(255, 255, 255, 0.596);
+}
+
+.other_icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 20%;
 }
 
 @keyframes slideUp {
@@ -64,4 +75,16 @@
   to {
     transform: translateY(100%);
   }
+}
+
+.battery_indicator {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-size: 13px;
+  justify-content: space-between;
+}
+
+.battery_indicator p {
+  margin-left: 4px;
 }
