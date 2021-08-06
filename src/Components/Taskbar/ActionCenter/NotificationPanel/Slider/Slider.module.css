@@ -8,6 +8,7 @@
 }
 
 .container {
+  --slider-thumb: #ffffff;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -37,6 +38,9 @@
   );
 }
 
+[data-theme="dark"] .container {
+  --slider-thumb: #4d4d4d;
+}
 [data-theme="dark"] .container input {
   --slider-color: #69d3fa;
 }
@@ -47,6 +51,7 @@
   width: 17px;
   height: 17px;
   border-radius: 50%;
+  border: 4px solid var(--slider-thumb);
   background: var(--slider-color);
   cursor: pointer;
 }
