@@ -64,7 +64,8 @@ export const PinnedApps: PinnedApp[] = [{
     icon: MSTeamsIcon
 }, {
     title: "VSCode",
-    icon: VSCodeIcon
+    icon: VSCodeIcon,
+    appId: "vscode"
 }, {
     title: "Music",
     icon: MSGrooveIcon
@@ -91,7 +92,7 @@ export const PinnedApps: PinnedApp[] = [{
 }]
 
 export const Apps = PinnedApps.reduce((acc, app) => {
-    return {
+    return !app.appId && {
         ...acc,
         [app.appId || app.title]: {
             ...app
