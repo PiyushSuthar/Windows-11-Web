@@ -1,16 +1,20 @@
 import edge from '../assets/icons/taskbar/edge.ico'
 import ms_store from '../assets/icons/taskbar/ms_store.png'
 import file_explorer from '../assets/icons/taskbar/file_explorer.webp'
-import { MSEdgeIcon, MSStoreIcon } from '../assets/icons/startmenu'
+import { MSEdgeIcon, MSStoreIcon, SettingsIcon, VSCodeIcon } from '../assets/icons/startmenu'
 import { ControlPanel, RecycleBin, ThisPC } from '../assets/icons/Desktop'
 import { Apps } from './startMenu.config'
+import { VsCodeApp } from '../Apps'
 
 export type App = {
     [key: string]: {
         title: string;
         isActive: boolean;
         icon: string
-        pinned?: boolean
+        pinned?: boolean,
+        Component?: any,
+        height?: number,
+        width?: number
     }
 }
 
@@ -48,5 +52,18 @@ export const AppsConfig: App = {
         isActive: false,
         icon: ControlPanel
     },
+    "settings": {
+        title: "Settings",
+        isActive: false,
+        icon: SettingsIcon
+    },
+    "vscode": {
+        title: "Visual Studio Code",
+        isActive: false,
+        icon: VSCodeIcon,
+        Component: VsCodeApp,
+        height: 500,
+        width: 800
+    },
     ...Apps,
-}
+} as const
