@@ -18,6 +18,7 @@ import WeatherIcon from "./icons8-weather.svg";
 import WhiteBoardIcon from "./icons8-whiteboard.svg";
 import SolitareIcon from "./icons8-microsoft-solitaire-collection.svg";
 import ShutDownIcon from "./power.svg";
+import SettingsIcon from "./icons8-settings.svg";
 
 export {
   GitHubIcon,
@@ -40,4 +41,5 @@ export {
   WhiteBoardIcon,
   SolitareIcon,
   ShutDownIcon,
+  SettingsIcon,
 };
