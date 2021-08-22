@@ -98,6 +98,7 @@
   align-items: center;
   justify-content: center;
   height: calc(100% - 32px);
+  overflow: hidden;
 }
 .content h4 {
   font-size: 20px;

@@ -20,7 +20,12 @@ export const WindowArea = () => {
               window_name={app.title}
               key={index}
               appid={appid}
-            />
+              height={app.height}
+              width={app.width}
+              // Component={}
+            >
+              {app.Component?.()}
+            </Window>
           )
         );
       })}

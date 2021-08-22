@@ -18,6 +18,9 @@ interface Props {
   window_icon: string;
   show_back?: boolean;
   appid: string;
+  Component?: any;
+  height?: number;
+  width?: number;
 }
 
 // Taken from puruVJ's macos web code :[]
@@ -33,6 +36,8 @@ export const WindowHolder: FunctionComponent<Props> = ({
   window_name = "Hello World",
   show_back = false,
   appid,
+  height,
+  width,
 }) => {
   const theme = useStore(ThemeStore);
   const OpenedApps = useStore(OpenApps);
@@ -44,7 +49,7 @@ export const WindowHolder: FunctionComponent<Props> = ({
 
   const WindowRef = useRef<HTMLDivElement>();
 
-  const randX = useMemo(() => randint(-800, 500), []);
+  const randX = useMemo(() => randint(-600, 100), []);
   const randY = useMemo(() => randint(-100, 100), []);
 
   const [isMaximized, setIsMaximized] = useState(false);
@@ -54,16 +59,18 @@ export const WindowHolder: FunctionComponent<Props> = ({
       default={{
         x: (document.body.clientWidth + randX) / 2,
         y: (100 + randY) / 2,
-        width: 320,
-        height: 300,
+        width: width || 320,
+        height: height || 300,
       }}
       minWidth="300"
       minHeight="300"
       bounds="parent"
-      style={{
-        transition: "height 0.2s ease, width 0.2s ease",
-        // transition: "all 0.3s ease",
-      }}
+      style={
+        {
+          // transition: "height 0.2s ease, width 0.2s ease",
+          // transition: "all 0.3s ease",
+        }
+      }
       size={
         isMaximized && {
           width: isMaximized ? document.body.clientWidth : 320,
@@ -120,18 +127,24 @@ export const WindowHolder: FunctionComponent<Props> = ({
             </div>
           </div>
         </div>
-        {children ? (
-          children
-        ) : (
-          <div className={styles.content}>
-            <img
-              class={styles.content_image}
-              src={window_icon}
-              alt={window_name}
-            />
-            <h4>Coming Soon!</h4>
-          </div>
-        )}
+        {/* {children ? (
+        ) : ( */}
+        <div className={styles.content}>
+          {children ? (
+            children
+          ) : (
+            <>
+              {" "}
+              <img
+                class={styles.content_image}
+                src={window_icon}
+                alt={window_name}
+              />
+              <h4>Coming Soon!</h4>
+            </>
+          )}
+        </div>
+        {/* )} */}
       </div>
     </Rnd>
   );
