@@ -59,6 +59,9 @@
   justify-content: space-evenly;
   min-width: 20%;
 }
+.other_icons div {
+  cursor: pointer;
+}
 
 @keyframes slideUp {
   from {

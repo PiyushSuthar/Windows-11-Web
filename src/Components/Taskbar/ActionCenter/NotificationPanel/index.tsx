@@ -5,6 +5,7 @@ import {
   closeActionCenter,
   showActionCenter,
 } from "../../../../store/actionCenter";
+import { openApp } from "../../../../store/activeWindow";
 import { BatteryIcon } from "../icons/battery";
 import { PencilIcon, SettingsIcon } from "../icons/settings";
 import { Actions } from "./Actions";
@@ -38,7 +39,13 @@ export const NotificationPanel = () => {
         </div>
         <div class={styles.other_icons}>
           <PencilIcon size="16" />
-          <SettingsIcon size="16" />
+          <div
+            onClick={() => {
+              openApp("settings");
+            }}
+          >
+            <SettingsIcon size="16" />
+          </div>
         </div>
       </div>
     </div>
