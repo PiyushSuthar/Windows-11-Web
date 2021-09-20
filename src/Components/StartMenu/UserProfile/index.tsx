@@ -6,7 +6,7 @@ export const UserProfile = () => {
     <div class={styles.container}>
       <div class={styles.user}>
         <img
-          src="https://pbs.twimg.com/profile_images/1411205961734254594/8gSRqpri_400x400.jpg"
+          src="https://avatars.githubusercontent.com/u/32237558?v=4&s=50"
           alt="Piyush Suthar"
         />
         <p>Piyush Suthar</p>
