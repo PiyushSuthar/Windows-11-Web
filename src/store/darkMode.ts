@@ -7,7 +7,7 @@ const LOCAL_KEY = "theme"
 export const ThemeStore = createStore<themeType>(() => {
   if (typeof window !== "undefined") {
     if (localStorage.getItem(LOCAL_KEY)) {
-      const localTheme = localStorage.getItem(LOCAL_KEY)! as themeType
+      const localTheme = localStorage.getItem(LOCAL_KEY) as themeType
       ThemeStore.set(localTheme)
       document.documentElement.setAttribute("data-theme", localTheme)
     } else {

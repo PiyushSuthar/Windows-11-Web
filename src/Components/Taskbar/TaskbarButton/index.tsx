@@ -9,7 +9,7 @@ interface Props {
 export const TaskBarButton = (props: icon & Props) => {
   const OpenedApps = useStore(OpenApps);
   const onClickAction =
-    props.action || (() => props.appId && openApp(props.appId!));
+    props.action || (() => props.appId && openApp(props.appId));
 
   const isAppOpen = props.appId && OpenedApps[props.appId].isActive;
   return (
