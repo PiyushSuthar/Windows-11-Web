@@ -11,7 +11,7 @@ export const TaskBarButton = (props: icon & Props) => {
   const onClickAction =
     props.action || (() => props.appId && openApp(props.appId!));
 
-  let isAppOpen = props.appId && OpenedApps[props.appId].isActive;
+  const isAppOpen = props.appId && OpenedApps[props.appId].isActive;
   return (
     <div
       class={[styles.button, isAppOpen && styles.active].join(" ")}

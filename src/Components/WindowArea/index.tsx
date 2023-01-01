@@ -12,7 +12,7 @@ export const WindowArea = () => {
   return (
     <Suspense fallback={<span></span>}>
       {Object.keys(OpenedApps).map((appid, index) => {
-        let app = OpenedApps[appid];
+        const app = OpenedApps[appid];
         return (
           app.isActive && (
             <Window

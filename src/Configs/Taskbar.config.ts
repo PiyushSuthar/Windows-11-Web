@@ -1,7 +1,7 @@
-import taskmanager from '../assets/icons/taskbar/taskmanager.png'
-import widget from '../assets/icons/taskbar/Widgets.png'
+import taskmanager from "../assets/icons/taskbar/taskmanager.png"
+import widget from "../assets/icons/taskbar/Widgets.png"
 
-import { toggleWidgets } from '../store/widgets'
+import { toggleWidgets } from "../store/widgets"
 
 export interface icon {
   name: string

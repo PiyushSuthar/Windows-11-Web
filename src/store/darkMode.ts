@@ -1,13 +1,13 @@
-import { createStore, getValue } from 'nanostores'
+import { createStore, getValue } from "nanostores"
 
 type themeType = "light" | "dark"
 
-let LOCAL_KEY = "theme"
+const LOCAL_KEY = "theme"
 
 export const ThemeStore = createStore<themeType>(() => {
   if (typeof window !== "undefined") {
     if (localStorage.getItem(LOCAL_KEY)) {
-      let localTheme = localStorage.getItem(LOCAL_KEY)! as themeType
+      const localTheme = localStorage.getItem(LOCAL_KEY)! as themeType
       ThemeStore.set(localTheme)
       document.documentElement.setAttribute("data-theme", localTheme)
     } else {
@@ -20,7 +20,7 @@ export const ThemeStore = createStore<themeType>(() => {
 
 export const toggleTheme = () => {
   if (typeof window !== "undefined") {
-    let newTheme: themeType = getValue(ThemeStore) === "light" ? "dark" : "light"
+    const newTheme: themeType = getValue(ThemeStore) === "light" ? "dark" : "light"
     ThemeStore.set(newTheme)
     localStorage.setItem(LOCAL_KEY, newTheme)
     document.documentElement.setAttribute("data-theme", newTheme)

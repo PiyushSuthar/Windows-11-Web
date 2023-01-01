@@ -27,8 +27,8 @@ export const Slider: FunctionalComponent<ISlider> = ({
 
   useEffect(() => {
     const listener = (event: Event) => {
-      let target = event.target as HTMLInputElement;
-      var value =
+      const target = event.target as HTMLInputElement;
+      const value =
         ((parseInt(target.value) - parseInt(target.min)) /
           (parseInt(target.max) - parseInt(target.min))) *
         100;

@@ -1,14 +1,14 @@
-import { RefObject } from 'preact';
-import { useEffect, useCallback, useState } from 'preact/hooks';
+import { RefObject } from "preact";
+import { useEffect, useCallback, useState } from "preact/hooks";
 
 export const useContextMenu = <T extends HTMLElement>(outerRef: RefObject<T>, contextMenuRef: RefObject<T>) => {
-  const [xPos, setXPos] = useState('0px');
-  const [yPos, setYPos] = useState('0px');
+  const [xPos, setXPos] = useState("0px");
+  const [yPos, setYPos] = useState("0px");
   const [transformOrigin, setTransformOrigin] = useState({
     x: "top",
     y: "left"
   });
-  const [targetEleId, setTargetEleId] = useState('');
+  const [targetEleId, setTargetEleId] = useState("");
 
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
@@ -29,12 +29,12 @@ export const useContextMenu = <T extends HTMLElement>(outerRef: RefObject<T>, co
       x -= 220
       // For some reason, it worked ;)
       transformOrigin_y = "right";
-    };
+    }
     if (window.innerHeight - y < 300) {
       y -= 250
       // For some reason, it worked ;)
       transformOrigin_x = "bottom";
-    };
+    }
 
     setXPos(`${x}px`);
     setYPos(`${y}px`);
@@ -54,12 +54,12 @@ export const useContextMenu = <T extends HTMLElement>(outerRef: RefObject<T>, co
   const handleClick = () => setIsMenuVisible(false);
 
   useEffect(() => {
-    document.addEventListener('click', handleClick);
-    document.addEventListener('contextmenu', handleContextMenu);
+    document.addEventListener("click", handleClick);
+    document.addEventListener("contextmenu", handleContextMenu);
 
     return () => {
-      document.removeEventListener('click', handleClick);
-      document.removeEventListener('contextmenu', handleContextMenu);
+      document.removeEventListener("click", handleClick);
+      document.removeEventListener("contextmenu", handleContextMenu);
     };
   }, []);
 

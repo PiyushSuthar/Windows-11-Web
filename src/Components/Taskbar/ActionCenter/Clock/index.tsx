@@ -5,7 +5,7 @@ export const Clock = () => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    let interval = setInterval(() => {
+    const interval = setInterval(() => {
       setTime(new Date());
     }, 1 * 1000);
     return () => clearInterval(interval);

@@ -1,5 +1,5 @@
-import { RefObject } from 'preact';
-import { useEffect, useRef } from 'preact/hooks';
+import { RefObject } from "preact";
+import { useEffect, useRef } from "preact/hooks";
 
 export const useFocusOutside = <T extends HTMLElement>(ref: RefObject<T>, callback: () => void) => {
   const cachedCallback = useRef(() => { });
@@ -15,8 +15,8 @@ export const useFocusOutside = <T extends HTMLElement>(ref: RefObject<T>, callba
   }
 
   useEffect(() => {
-    document.addEventListener('focus', handleFocus, true);
+    document.addEventListener("focus", handleFocus, true);
 
-    return () => document.removeEventListener('focus', handleFocus);
+    return () => document.removeEventListener("focus", handleFocus);
   }, []);
 };

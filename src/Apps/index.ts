@@ -1,1 +1,1 @@
-export * from './VsCode'
+export * from "./VsCode"

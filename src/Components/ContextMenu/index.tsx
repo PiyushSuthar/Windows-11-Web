@@ -42,7 +42,7 @@ export const ContextMenu = ({ containerRef, items }: Props) => {
     () => isMenuVisible && setIsMenuVisible(false)
   );
 
-  let MENU = getContextMenu(targetEleId);
+  const MENU = getContextMenu(targetEleId);
   // TODO: Add Icons
   const Contextitem = ({
     text,
