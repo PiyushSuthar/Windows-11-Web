@@ -12,7 +12,7 @@ interface ISlider {
 }
 
 export const Sliders = () => (
-  <div class={styles.sliders}>
+  <div className={styles.sliders}>
     <Slider icon={SpeakerIcon} show_chevron={true} name="Audio" />
     <Slider icon={SunIcon} name="Audio" />
   </div>
@@ -44,7 +44,7 @@ export const Slider: FunctionalComponent<ISlider> = ({
   }, []);
 
   return (
-    <div class={styles.container}>
+    <div className={styles.container}>
       <Icon size="18" />
       <input
         type="range"

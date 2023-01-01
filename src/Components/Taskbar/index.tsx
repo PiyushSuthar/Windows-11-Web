@@ -8,7 +8,6 @@ import dark_mode_search_icon from "../../assets/icons/taskbar/search-dark.svg";
 import light_mode_search_icon from "../../assets/icons/taskbar/search-light.svg";
 import dark_mode_icon from "../../assets/icons/taskbar/dark_mode.png";
 import light_mode_icon from "../../assets/icons/taskbar/light_mode.png";
-import { AppsConfig } from "../../Configs/apps.config";
 import { ActionCenter } from "./ActionCenter";
 import { OpenApps } from "../../store/activeWindow";
 import { toggleStartMenu } from "../../store/startMenu";

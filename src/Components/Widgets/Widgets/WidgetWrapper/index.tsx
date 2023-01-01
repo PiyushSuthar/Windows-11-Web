@@ -15,14 +15,14 @@ export const WidgetWrapper: FunctionComponent<props> = ({
   className,
 }) => (
   <div className={[className, styles.wrapper].join(" ")}>
-    <div class={styles.info_bar}>
-      <div class={styles.title}>
+    <div className={styles.info_bar}>
+      <div className={styles.title}>
         <div className={styles.icon}>
           {SVG ? <SVG size="15" /> : icon && <img src={icon} alt={title} />}
         </div>
         <span>{title}</span>
       </div>
-      <div class={styles.menu}>
+      <div className={styles.menu}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -30,10 +30,10 @@ export const WidgetWrapper: FunctionComponent<props> = ({
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="feather feather-more-horizontal"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="feather feather-more-horizontal"
         >
           <circle cx="12" cy="12" r="1"></circle>
           <circle cx="19" cy="12" r="1"></circle>

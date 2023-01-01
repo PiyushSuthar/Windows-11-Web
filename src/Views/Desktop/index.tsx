@@ -1,16 +1,11 @@
 import styles from "./Desktop.module.css";
-// import DarkBackground from "../../assets/Wallpapers/default_dark.jpg";
-// import LightBackground from "../../assets/Wallpapers/default_light.jpg";
 import { TaskBar } from "../../Components/Taskbar/";
-// import { ContextMenu } from "../../Components/ContextMenu";
-import { useEffect, useRef } from "preact/hooks";
-// import { Startmenu } from "../../Components/StartMenu";
+import { useRef } from "preact/hooks";
 import StartUpSound from "../../assets/startup.mp3";
 import { WindowArea } from "../../Components/WindowArea";
 import { lazy, Suspense } from "preact/compat";
 import { defaultContextMenuConfig } from "../../Configs/ContextMenus/default.config";
 import { DesktopItems } from "../../Components/DesktopItems";
-// import { Widgets } from "../../Components/Widgets";
 
 const ContextMenu = lazy(() =>
   import("../../Components/ContextMenu").then(({ ContextMenu }) => ({
@@ -36,9 +31,7 @@ const NotificationPanel = lazy(() =>
   )
 );
 
-interface Props {}
-
-export const Desktop = (props: Props) => {
+export const Desktop = () => {
   const ContainerRef = useRef<HTMLDivElement>();
 
   // useEffect(() => {
@@ -47,7 +40,7 @@ export const Desktop = (props: Props) => {
   // }, []);
 
   return (
-    <div class={styles.container} ref={ContainerRef}>
+    <div className={styles.container} ref={ContainerRef}>
       <DesktopItems />
       <WindowArea />
       <Suspense fallback={<span></span>}>
@@ -64,8 +57,3 @@ export const Desktop = (props: Props) => {
     </div>
   );
 };
-
-// function preloadImage(path: string) {
-//   const img = new Image();
-//   img.src = path;
-// }

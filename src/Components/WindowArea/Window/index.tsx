@@ -2,7 +2,6 @@ import { Rnd } from "react-rnd";
 import styles from "./Window.module.css";
 import {
   MaximizeIcon,
-  RestoreIcon,
   BackIcon,
   CloseIcon,
   MinimizeIcon,
@@ -85,13 +84,13 @@ export const WindowHolder: FunctionComponent<Props> = ({
       }}
       dragHandleClassName="app-drag-handler"
     >
-      <div ref={WindowRef} class={styles.container}>
+      <div ref={WindowRef} className={styles.container}>
         <div className={[styles.titlebar, "app-drag-handler"].join(" ")}>
           <div className={styles.title_stuff}>
             {show_back ? (
               <BackIcon />
             ) : (
-              <img src={window_icon} class={styles.title_icon} />
+              <img src={window_icon} className={styles.title_icon} />
             )}
             <p>{window_name}</p>
           </div>
@@ -136,7 +135,7 @@ export const WindowHolder: FunctionComponent<Props> = ({
             <>
               {" "}
               <img
-                class={styles.content_image}
+                className={styles.content_image}
                 src={window_icon}
                 alt={window_name}
               />

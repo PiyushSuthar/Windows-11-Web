@@ -1,7 +1,6 @@
 import { useStore } from "nanostores/preact";
-import { useEffect, useRef } from "preact/hooks";
+import { useRef } from "preact/hooks";
 import useClickOutside from "../../hooks/useClickOutside";
-import { useFocusOutside } from "../../hooks/useFocusOutside";
 import {
   showStartMenu as isStartMenuVisible,
   closeStartMenu,
@@ -27,17 +26,17 @@ export const Startmenu = () => {
   useClickOutside(StartMenuRef, hideStartMenu);
 
   return showStartMenu ? (
-    <div ref={StartMenuRef} class={styles.container}>
-      <div class={styles.inner_container}>
+    <div ref={StartMenuRef} className={styles.container}>
+      <div className={styles.inner_container}>
         <SearchBar />
       </div>
-      <div class={styles.inner_container}>
+      <div className={styles.inner_container}>
         <PinnedApps hideStartMenu={hideStartMenu} />
       </div>
-      <div class={styles.inner_container}>
+      <div className={styles.inner_container}>
         <RecommendedApps />
       </div>
-      <div class={styles.user_container}>
+      <div className={styles.user_container}>
         <UserProfile />
       </div>
     </div>

@@ -2,7 +2,8 @@ import { RefObject } from "preact";
 import { useEffect, useRef } from "preact/hooks";
 
 export const useFocusOutside = <T extends HTMLElement>(ref: RefObject<T>, callback: () => void) => {
-  const cachedCallback = useRef(() => { });
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  const cachedCallback = useRef(() => {});
 
   useEffect(() => {
     cachedCallback.current = callback;
@@ -11,7 +12,7 @@ export const useFocusOutside = <T extends HTMLElement>(ref: RefObject<T>, callba
   function handleFocus(e: FocusEvent) {
     const target = e.target as HTMLElement;
 
-    if (!ref.current?.contains(target)) cachedCallback.current?.();
+    if (cachedCallback.current && !ref.current?.contains(target)) cachedCallback.current?.();
   }
 
   useEffect(() => {

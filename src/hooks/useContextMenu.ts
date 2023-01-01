@@ -1,7 +1,7 @@
 import { RefObject } from "preact";
 import { useEffect, useCallback, useState } from "preact/hooks";
 
-export const useContextMenu = <T extends HTMLElement>(outerRef: RefObject<T>, contextMenuRef: RefObject<T>) => {
+export const useContextMenu = <T extends HTMLElement>(outerRef: RefObject<T>) => {
   const [xPos, setXPos] = useState("0px");
   const [yPos, setYPos] = useState("0px");
   const [transformOrigin, setTransformOrigin] = useState({

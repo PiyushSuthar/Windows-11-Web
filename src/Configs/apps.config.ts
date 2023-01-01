@@ -1,5 +1,3 @@
-import edge from "../assets/icons/taskbar/edge.ico"
-import ms_store from "../assets/icons/taskbar/ms_store.png"
 import file_explorer from "../assets/icons/taskbar/file_explorer.webp"
 import { MSEdgeIcon, MSStoreIcon, SettingsIcon, VSCodeIcon } from "../assets/icons/startmenu"
 import { ControlPanel, RecycleBin, ThisPC } from "../assets/icons/Desktop"

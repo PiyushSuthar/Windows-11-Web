@@ -1,5 +1,4 @@
 import { createStore, getValue } from "nanostores"
-import { showStartMenu } from "./startMenu"
 
 export const ShowWidgetStore = createStore<boolean>(() => {
   ShowWidgetStore.set(false)

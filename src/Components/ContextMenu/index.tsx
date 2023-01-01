@@ -22,7 +22,7 @@ export interface ContextItem {
   isDisabled?: boolean;
 }
 
-export const ContextMenu = ({ containerRef, items }: Props) => {
+export const ContextMenu = ({ containerRef }: Props) => {
   const contextmenuRef = useRef<HTMLDivElement>();
   const {
     isMenuVisible,
@@ -49,13 +49,12 @@ export const ContextMenu = ({ containerRef, items }: Props) => {
     subitems,
     onClick,
     divideNext,
-    icon,
     isDisabled,
   }: ContextItem) => (
     <>
       <div
         onClick={onClick}
-        class={[styles.context_item, isDisabled && styles.disabled].join(" ")}
+        className={[styles.context_item, isDisabled && styles.disabled].join(" ")}
       >
         <p>{text}</p>
         {subitems && (
@@ -68,10 +67,10 @@ export const ContextMenu = ({ containerRef, items }: Props) => {
                 [transformOrigin.y]: "101%",
                 transformOrigin: `top ${transformOrigin.y}`,
               }}
-              class={styles.submenu_items}
+              className={styles.submenu_items}
             >
-              {subitems.map((item) => (
-                <Contextitem text={item.text} />
+              {subitems.map((item, index) => (
+                <Contextitem key={`context-item-${index}`} text={item.text} />
               ))}
             </div>
           </>
@@ -81,7 +80,7 @@ export const ContextMenu = ({ containerRef, items }: Props) => {
     </>
   );
 
-  const ContextDivider = () => <div class={styles.context_divider}></div>;
+  const ContextDivider = () => <div className={styles.context_divider}></div>;
 
   return isMenuVisible ? (
     <div
@@ -91,7 +90,7 @@ export const ContextMenu = ({ containerRef, items }: Props) => {
         left: xPos,
         transformOrigin: `${transformOrigin.x} ${transformOrigin.y}`,
       }}
-      class={styles.context_menu}
+      className={styles.context_menu}
     >
       {MENU.map((item, index) => (
         <Contextitem key={index} {...item} />

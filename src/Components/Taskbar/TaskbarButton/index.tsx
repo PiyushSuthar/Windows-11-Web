@@ -14,7 +14,7 @@ export const TaskBarButton = (props: icon & Props) => {
   const isAppOpen = props.appId && OpenedApps[props.appId].isActive;
   return (
     <div
-      class={[styles.button, isAppOpen && styles.active].join(" ")}
+      className={[styles.button, isAppOpen && styles.active].join(" ")}
       onClick={onClickAction}
     >
       <img src={props.url} alt={props.name} />

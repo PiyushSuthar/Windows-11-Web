@@ -1,9 +1,9 @@
 import styles from "./RecommendedApps.module.css";
-import { Button, TitleArea } from "../PinnedApps";
+import { TitleArea } from "../PinnedApps";
 
 export const RecommendedApps = () => {
   return (
-    <div class={styles.container}>
+    <div className={styles.container}>
       <TitleArea title="Recommended" button="More" />
       <br />
       <br />

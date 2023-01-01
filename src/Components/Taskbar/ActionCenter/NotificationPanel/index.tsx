@@ -27,17 +27,17 @@ export const NotificationPanel = () => {
   useClickOutside(ActionCenterRef, hideActionCenter);
 
   return isActionCenterVisible ? (
-    <div ref={ActionCenterRef} class={styles.container}>
-      <div class={styles.inner_container}>
+    <div ref={ActionCenterRef} className={styles.container}>
+      <div className={styles.inner_container}>
         <Actions />
         <Sliders />
       </div>
-      <div class={styles.sub_container}>
-        <div class={styles.battery_indicator}>
+      <div className={styles.sub_container}>
+        <div className={styles.battery_indicator}>
           <BatteryIcon />
           <p>69%</p>
         </div>
-        <div class={styles.other_icons}>
+        <div className={styles.other_icons}>
           <PencilIcon size="16" />
           <div
             onClick={() => {

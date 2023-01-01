@@ -17,10 +17,10 @@ export const CloseIcon = ({
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      stroke-width="1.25"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="feather feather-x"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="feather feather-x"
     >
       <line x1="21" y1="3" x2="3" y2="21"></line>
       <line x1="3" y1="3" x2="21" y2="21"></line>
@@ -48,7 +48,7 @@ export const MaximizeIcon = ({
   );
 };
 
-export const RestoreIcon = (props: IconProps) => {
+export const RestoreIcon = () => {
   return (
     <svg
       width="16"
@@ -81,10 +81,10 @@ export const MinimizeIcon = ({
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      stroke-width="1.25"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="feather feather-x"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="feather feather-x"
     >
       <line x1="3" y1="12.5" x2="21" y2="12.5"></line>
     </svg>
@@ -97,10 +97,10 @@ export const BackIcon = ({ width = "16", height = "16" }: IconProps) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    class="feather feather-arrow-left"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="feather feather-arrow-left"
   >
     <line x1="19" y1="12" x2="5" y2="12"></line>
     <polyline points="12 19 5 12 12 5"></polyline>

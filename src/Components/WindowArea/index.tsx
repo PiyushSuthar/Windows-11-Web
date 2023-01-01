@@ -4,8 +4,6 @@ import { OpenApps } from "../../store/activeWindow";
 const Window = lazy(() =>
   import("./Window").then(({ WindowHolder }) => ({ default: WindowHolder }))
 );
-import { ICONS } from "../../Configs/Taskbar.config";
-import { AppsConfig } from "../../Configs/apps.config";
 
 export const WindowArea = () => {
   const OpenedApps = useStore(OpenApps);
