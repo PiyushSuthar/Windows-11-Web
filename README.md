@@ -34,10 +34,6 @@ Some similar, but super awesome projects!
 - [Ubuntu Web](https://vivek9patel.github.io/) by [Vivek Patel](https://github.com/vivek9patel/vivek9patel.github.io)
 - [Windows 11 web, but with no-code](https://windows11.webflow.io/) by [Manivannan](https://twitter.com/BeingMani97)
 
-### Known Issues
-
-- Blur not working in Firefox browser.
-
 #### Solution:-
 
 1. Open `about:config` in your firefox browser.
