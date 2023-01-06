@@ -1,4 +1,4 @@
-import preact, { FunctionalComponent } from "preact";
+import { FunctionalComponent } from "preact";
 import { useState } from "preact/hooks";
 import { ChevronIcon } from "../../../../StartMenu/PinnedApps";
 import { AccessibilityIcon } from "../../icons/accessibilityIcon";
@@ -49,7 +49,7 @@ const ACTIONS: IAction[] = [
 
 export const Actions = () => {
   return (
-    <div class={styles.container}>
+    <div className={styles.container}>
       {ACTIONS.map((action) => (
         <Action {...action} key={action.name} />
       ))}
@@ -67,9 +67,9 @@ export const Action: FunctionalComponent<IAction> = ({
   return (
     <div
       onClick={() => setIsActive((prev) => !prev)}
-      class={styles.action_container}
+      className={styles.action_container}
     >
-      <div class={[styles.icon, isActive && styles.active].join(" ")}>
+      <div className={[styles.icon, isActive && styles.active].join(" ")}>
         <Icon size="20" />
         {show_chevron && <ChevronIcon size="18" />}
       </div>

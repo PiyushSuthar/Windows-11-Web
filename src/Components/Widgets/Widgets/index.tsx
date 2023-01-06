@@ -1,10 +1,10 @@
 import styles from "../Widgets.module.css";
 import { WeatherWidget } from "./Weather";
 
-export const WidgetsContaner = (props: any) => {
+export const WidgetsContaner = () => {
   return (
     <>
-      <div class={styles.widgets_conatiner}>
+      <div className={styles.widgets_conatiner}>
         <WeatherWidget />
       </div>
     </>

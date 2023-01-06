@@ -4,7 +4,6 @@ import useClickOutside from "../../hooks/useClickOutside";
 import {
   hideWidgets,
   ShowWidgetStore,
-  toggleWidgets,
 } from "../../store/widgets";
 import { SearchBar } from "../StartMenu/SearchBar";
 import { WidgetClock } from "./Clock";
@@ -29,7 +28,7 @@ export const Widgets = () => {
     </div>
   );
   return showWidgets ? (
-    <div ref={WidgetsRef} class={styles.container}>
+    <div ref={WidgetsRef} className={styles.container}>
       <WidgetClock />
       <UserImage />
       <SearchBar

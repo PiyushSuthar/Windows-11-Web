@@ -1,13 +1,13 @@
 import { createStore, getValue } from "nanostores";
 
-export const showStartMenu = createStore<Boolean>(() => {
+export const showStartMenu = createStore<boolean>(() => {
   showStartMenu.set(false)
 })
 export const toggleStartMenu = () => {
   getValue(showStartMenu)
     ? setTimeout(() => {
-        showStartMenu.set(false);
-      }, 150)
+      showStartMenu.set(false);
+    }, 150)
     : showStartMenu.set(true);
 };
 export const closeStartMenu = () => {

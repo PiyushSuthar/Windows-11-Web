@@ -4,15 +4,13 @@ import { OpenApps } from "../../store/activeWindow";
 const Window = lazy(() =>
   import("./Window").then(({ WindowHolder }) => ({ default: WindowHolder }))
 );
-import { ICONS } from "../../Configs/Taskbar.config";
-import { AppsConfig } from "../../Configs/apps.config";
 
 export const WindowArea = () => {
   const OpenedApps = useStore(OpenApps);
   return (
     <Suspense fallback={<span></span>}>
       {Object.keys(OpenedApps).map((appid, index) => {
-        let app = OpenedApps[appid];
+        const app = OpenedApps[appid];
         return (
           app.isActive && (
             <Window

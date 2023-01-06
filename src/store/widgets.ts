@@ -1,16 +1,15 @@
-import { createStore, getValue } from 'nanostores'
-import { showStartMenu } from './startMenu'
+import { createStore, getValue } from "nanostores"
 
 export const ShowWidgetStore = createStore<boolean>(() => {
-    ShowWidgetStore.set(false)
+  ShowWidgetStore.set(false)
 })
 
 export const toggleWidgets = () => {
-    getValue(ShowWidgetStore) ? setTimeout(() => {
-        ShowWidgetStore.set(false)
-    }, 150) : ShowWidgetStore.set(true)
+  getValue(ShowWidgetStore) ? setTimeout(() => {
+    ShowWidgetStore.set(false)
+  }, 150) : ShowWidgetStore.set(true)
 }
 
 export const hideWidgets = () => {
-    ShowWidgetStore.set(false)
+  ShowWidgetStore.set(false)
 }

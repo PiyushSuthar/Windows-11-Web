@@ -4,12 +4,10 @@ import { WidgetWrapper } from "../WidgetWrapper";
 import { CloudIcon, HomeIcon } from "./icons";
 import styles from "./Weather.module.css";
 
-const celciusToFahrenheit = (celcius: number) => (celcius * 9) / 5 + 32;
-const fareheitToCelcius = (fahrenheit: number) => ((fahrenheit - 32) * 5) / 9;
 
 export const WeatherWidget = () => {
-  const [tempUnit, setTempUnit] = useState<"C" | "F">("C");
-  const [temp, setTemp] = useState<number | string>(33);
+  const [tempUnit] = useState<"C" | "F">("C");
+  const [temp] = useState<number | string>(33);
 
   return (
     <WidgetWrapper title="Weather" className={styles.wrapper} SVG={CloudIcon}>
@@ -18,7 +16,7 @@ export const WeatherWidget = () => {
           <HomeIcon />
           <span>Margao, Goa, India</span>
         </div>
-        <div class={styles.weather_info}>
+        <div className={styles.weather_info}>
           <div className={styles.weather_data}>
             <div className={styles.weather_icon}>
               <img src={WeatherIcon} alt="Weather" />

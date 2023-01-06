@@ -12,12 +12,12 @@ export const SearchBar = ({
   className,
 }: Props) => {
   return (
-    <div class={[styles.search_container, className].join(" ")}>
-      <div class={styles.icon}>
+    <div className={[styles.search_container, className].join(" ")}>
+      <div className={styles.icon}>
         <SearchIcon />
       </div>
       <input
-        class={styles.search_input}
+        className={styles.search_input}
         type="text"
         placeholder={placeholder}
         onKeyPress={(e: KeyboardEvent) => {

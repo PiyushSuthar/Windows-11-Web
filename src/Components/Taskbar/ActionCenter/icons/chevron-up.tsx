@@ -6,10 +6,10 @@ export const ChevronUP = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    class="feather feather-chevron-up"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="feather feather-chevron-up"
   >
     <polyline points="18 15 12 9 6 15"></polyline>
   </svg>
