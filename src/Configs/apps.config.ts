@@ -65,5 +65,5 @@ export const AppsConfig: App = {
         height: 500,
         width: 800
     },
-    ...Apps,
+    ...Apps(),
 } as const

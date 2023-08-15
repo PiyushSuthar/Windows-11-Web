@@ -14,6 +14,7 @@ export const WidgetClock = () => {
     <div className={styles.container}>
       <div className={styles.time}>
         {time.toLocaleTimeString("en-us", {
+          //@ts-ignore
           timeStyle: "short",
         })}
       </div>

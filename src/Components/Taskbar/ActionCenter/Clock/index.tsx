@@ -14,6 +14,7 @@ export const Clock = () => {
     <div className={styles.container}>
       <div className="time">
         {time.toLocaleTimeString("en-us", {
+          //@ts-ignore
           timeStyle: "short",
         })}
       </div>
