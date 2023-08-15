@@ -8,6 +8,7 @@
     "postbuild": "workbox generateSW workbox-config.js"
   },
   "dependencies": {
+    "million": "^2.5.13",
     "nanostores": "^0.3.3",
     "preact": "^10.5.13",
     "react-rnd": "^10.3.3"
