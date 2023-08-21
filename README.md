@@ -14,7 +14,7 @@ BTW, This project was inspired by [Macos Web](https://github.com/PuruVJ/macos-we
 
 ### Stack
 
-- [Preact](https://preactjs.com/)
+- [Preact](https://preactjs.com/) (Now [Million Js](https://million.dev/))
 - [ViteJS](http://vitejs.dev/)
 
 ### Acknowledgement
